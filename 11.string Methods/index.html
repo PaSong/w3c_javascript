@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
+
 <body>
   <h1>문자열 메서드 및 속성</h1>
   <p>문자열 메서드는 문자열 작업을 도와줌</p>
@@ -18,41 +20,41 @@
   <p>var pos = str.indexOf('locate');</p>
   <p>indexOf() 메소드(위치)의 인덱스를 반환.제 문자열에서 지정된 문자의 발생</p>
 
-   <p>lastIndexOf()에서도 ()메소드의 인덱스 반환 마지막 문자열에서 지정된 텍스트의 발생.</p>
-   <p>indexOf()및 lastIndexOf()는 텍스트가 없으면 -1을 반환</p>
+  <p>lastIndexOf()에서도 ()메소드의 인덱스 반환 마지막 문자열에서 지정된 텍스트의 발생.</p>
+  <p>indexOf()및 lastIndexOf()는 텍스트가 없으면 -1을 반환</p>
 
-    <p>var pos = str.indexOf("locate",15)</p> <!-- 흠... -->
+  <p>var pos = str.indexOf("locate",15)</p> <!-- 흠... -->
 
-    <h2>문자열에서 문자열 검색</h2>
-    <p>var pos = str.search("locate");</p>
-    <p>검색()메소드는 지정된 값에 대한 문자열을 검색하고 일치의 위치를 반환함</p>
+  <h2>문자열에서 문자열 검색</h2>
+  <p>var pos = str.search("locate");</p>
+  <p>검색()메소드는 지정된 값에 대한 문자열을 검색하고 일치의 위치를 반환함</p>
 
-    <h3>여기서 잠깐</h3>
-    <p>search() 와 indexOf()는 동일하지 않음.</p>
-    <p>search() 메소드는 두 번째 시작 위치 인수를 취할 수 없음.</p>
-    <p>indexOf()메소드는 강력한 검색 값(정규표현식)을 사용할 수 없음</p>
+  <h3>여기서 잠깐</h3>
+  <p>search() 와 indexOf()는 동일하지 않음.</p>
+  <p>search() 메소드는 두 번째 시작 위치 인수를 취할 수 없음.</p>
+  <p>indexOf()메소드는 강력한 검색 값(정규표현식)을 사용할 수 없음</p>
 
-    <h2>문자열 파트 추출하기</h2>
-    <p>slice()</p>
-    <p>substring()</p>
-    <p>substr()</p>
+  <h2>문자열 파트 추출하기</h2>
+  <p>slice()</p>
+  <p>substring()</p>
+  <p>substr()</p>
 
-    <h2>slice()메서드</h2>
-     <p>var res = str.slice(7,13;)</p>
-     <p>문자열의 일부를 위치 7에서 위치 13으로 분할함</p>
-     <p>매개 변수가 음수이면 위치는 문자열 끝에서부터 계산</p>
-     <p>두 번째 매개 변수를 생략하면 메서드는 문자열의 나머지 부분을 잘라냄</p>
-     <span>인터넷익스플로러8이하에서는 음수위치가 작동되지 않음</span>
+  <h2>slice()메서드</h2>
+  <p>var res = str.slice(7,13;)</p>
+  <p>문자열의 일부를 위치 7에서 위치 13으로 분할함</p>
+  <p>매개 변수가 음수이면 위치는 문자열 끝에서부터 계산</p>
+  <p>두 번째 매개 변수를 생략하면 메서드는 문자열의 나머지 부분을 잘라냄</p>
+  <span>인터넷익스플로러8이하에서는 음수위치가 작동되지 않음</span>
 
-     <h2>substring()메서드</h2>
-      <p>음수인덱스를 사용할 수 없음.</p>
-      <p>나머지는 slice()와 동일</p>
+  <h2>substring()메서드</h2>
+  <p>음수인덱스를 사용할 수 없음.</p>
+  <p>나머지는 slice()와 동일</p>
 
-      <h2>sybstr()메서드</h2>
-      <p>두번째 매개 변수는 추출 된 부분의 길이를 지정한다는 것</p>
-      <p>나머지는 slice()와 동일 </p>
-      <p>두번째 매개 변수를 생략하면 substr()은 나머지 문자열을 잘라냄</p>
-      <p>음수면 끝에서 부터</p>
+  <h2>sybstr()메서드</h2>
+  <p>두번째 매개 변수는 추출 된 부분의 길이를 지정한다는 것</p>
+  <p>나머지는 slice()와 동일 </p>
+  <p>두번째 매개 변수를 생략하면 substr()은 나머지 문자열을 잘라냄</p>
+  <p>음수면 끝에서 부터</p>
 
 
   <h2>문자열 내용 바꾸기</h2>
@@ -62,7 +64,42 @@
   <p>대소문자을 구분</p>
   <p>대소문자를 구분하지 않으려면 i플래그(정규식 없음) 사용하는 정규표현식을 사용</p>
   <span>정규식은 따옴표 없이 작성</span>
-   <p>모든 일치 항목을 바꾸려면 /g 플래그(전역 일치)와 함께 정규식 사용</p>
-   <p>var n = str.replace(/Microsoft/g,"W3School");</p>
+  <p>모든 일치 항목을 바꾸려면 /g 플래그(전역 일치)와 함께 정규식 사용</p>
+  <p>var n = str.replace(/Microsoft/g,"W3School");</p>
+
+  <h2>대소문자로 변환</h2>
+  <p>toUpperCase()로 문자열을 대문자로 변환</p>
+  <p>toLowerCase()를 사용하면 문자열이 소문자로 변환</p>
+
+  <h2>concat()매서드</h2>
+  <p>concat()는 두개 이상의 문자열을 조인함.</p>
+  <p>var text1="Hello"</p>
+  <p>var text2 = "World"</p>
+  <p>var text3 = text1.concat("",text2)</p>
+  <p>concat()매소드대신 덧셈 연산자를 사용 할 수 있음</p>
+
+  <h2>string.trim()</h2>
+  <p>문자열의 양쪽에서 공백을 제거</p>
+
+  <h3>문자열 문자 추출하기</h3>
+  <p>3가지 방법이 있음</p>
+
+  <h2>charAt()메서드</h2>
+  <p>charAt()메서드는 문자열에서 지정된 인덱스(위치)에 있는 문자를 돌려줌</p>
+
+  <h2>charCodeAt()매소드</h2>
+  <p>charCodeAt()매소드는 문자열에서 지정된 인덱스에있는 문자의 유니코드를 반환</p>
+
+  <h2>property Access</h2>
+  <p>문자열에 대한 속성 액세스[]를 허용</p>
+  <p>var str='hello world';</p>
+  <p>str[0] //returns H</p>
+
+  <h2>문자열을 배열로 변환</h2>
+  <p>split()메서드를 사용하여 배열로 변환</p>
+  <p>var txt ="a,b,c,d,e";</p>
+  <p>text.split(",")</p>
+  <p>구분 기호가 생략되면 리턴 된 배열은 전체 문자열을 index[0]에 포함</p>
 </body>
+
 </html>
