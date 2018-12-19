@@ -25,5 +25,68 @@
 
   <h2>배열 요소 액세스</h2>
   <p>인덱스 번호를 참조하여 배열 요소에 엑세스함.</p>
+  <p>var name = cars[0]</p>
+
+  <h2>배열 요소 변경</h2>
+  <p>var cars = ["Saab","Volvo","BMW"];
+      cars[0] = "Opel";
+      documnet.getElementById("demo").innnerHTML = cars[0];
+  </p>
+
+  <h2>전체 배열 엑세스</h2>
+  <p>JavaScript를 사용하면 배열 이름을 참조하여 전체 배열에 액세스 할 수 있음.</p>
+
+  <h2>배열은 객체임.</h2>
+  <p>배열은 특별한 유형의 객체. JavaScript의 typeOf 연산자는 'object'를 반환</p>
+
+  <h2>배열 요소가 객체가 될 수 있음.</h2>
+  <p>자바스크립트 변수는 객체가 될 수 있음. 배열은 특별한 종류의 객체</p>
+  <p>이 때문에 동일한 배열에서 여러 유형의 변수를 가질 수 있음.</p>
+  <p>배열은 객체를 가질 수 있음. 배열에 함수를 포함 할 수 있음. 배열에 배열을 가질 수 있음.</p>
+  
+  <h2>배열 속성 및 메서드</h2>
+  <p>자바스크립트 배열으 진정한 강점은 내장 배열 속성 및 메서드임.</p>
+  <p>var x = car.length; // The length property returns the number of elements</p>\
+  <span>length 속성은 항상 가장 높은 배열 인덱스보다 하나 더 큼</span>
+  <p>var y = cars.sort(); // The sort() method sorts arrays</p>
+
+  <h2>마지막 배열 요소 액세스</h2>
+  <p>var last = fruits[fruits.length -1];</p>
+
+  <h2>루핑 배열 요소</h2>
+  <p>배열을 반복하는 가장 안전한 방법은 "for"루프를 사용하는 것</p>
+  <p>var fruits, text, fLen, i;
+      fruits = ["Banana","Orange","Apple","Mango"];
+      fLen = fruits.length;
+
+      text = "<ul>";
+      for (i = 0; i < fLen; i++){
+        text += '<li>' + fruits[i] + "</li>";
+      }
+      text += "</ul>";
+  </p>
+  <p>Array.forEach() 함수를 사용할 수도 있음</p>
+  <p>
+    var fruits, text;
+    fruits = ["Banana","Orange","Apple","Mango"];
+
+    text = "<ul>";
+    fruits.forEach(myFunction);
+    text += "</ul>";
+
+    function myFunction(value){
+      text += "<li>" + value + "</li>";
+    }
+  </p>
+
+
+  <h2>배열요소 추가하기</h2>
+  <p>새 요소를 배열에 추가하는 가장 쉬운 방법은 push 메서드를 사용하는 것</p>
+  <p>var fruits = ["Banana","Orange","Apple","Mango"];
+    fruits.push("lemon"); 
+  </p>
+  <p>마지막 요소 뒤에 추가됨.</p>
+
+  <p>length 속성을 사용하여 새 요소를 배열에 추가 할 수 도 있음.</p>
 </body>
 </html>
