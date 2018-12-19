@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Number Methods</h1>
+  <p>프리미티브 값(3.14 또는 2014와 같은)은 객체가 아니기 때문에 속성 및 메서드를 가질 수 없음.</p>
+  <p>하지만 자바 스크립트에서는 메서드와 속성을 실행할 때 원시 값을 객체로 처리하므로 메서드 및 속성을 기본 값으로 사용 할 수도 있음</p>
+
+  <h2>toString()메서드</h2>
+  <p>toString()은 숫자를 문자열로 반환</p>
+  <p>모든 숫자 메서드는 모든 유형의 숫자(리터럴,변수 또는 표현식)에서 사용할 수 있음.</p>
+
+  <h2>toExponential()메서드</h2>
+  <P>지수 표기법을 사용하여 숫자를 반올림하여 쓰는 문자열을 반환</P>
+  <p>매개 변수는 소수점 뒤의 문자 수를 정의</p>
+  <p>매개 변수는 선택적임. 지정하지 않으면 자바스크립트가 숫자를 반올림하지 않음</p>
+
+  <h2>toFixed()메서드</h2>
+  <p>tofixed()는 지정된 소수점 이하 자릿수로 작성된 문자열을 반환함.</p>
+  <p>var x = 9.656;</p>
+  <p>x.toFixed(0); //return 10</p>
+  <p>x.toFixed(2); //return 9.66</p>
+  <span>toFixed(2)는 돈으로 작업하는데 적합함.</span>
+  <i>반올림이 됨</i>
+
+  <h2>toPrecision()메서드</h2>
+  <p>toPrecision()은 지정된 길이로 작성된 숫자가있는 문자열을 반환</p>
+  <P>var x = 9.656;</P>
+  <p>x.toPrecision(2); //returns 9.7</p>
+
+  <h2>valueOf()메서드</h2>
+  <p>valueOf()는 숫자를 숫자로 반환</p>
+  <p>(100+23).valueof(); // return123 for expression 100 +23</p>
+  <P>value()메서드는 number 객체를 기본 값으로 변환하기 위해 자바스크립트 내부적으로 사용됨. 코드에서 사용할 이유가 없음.</P>
+
+  <ul>
+    <h2>변수를 숫자로 변환</h2>
+    <li>number()메서드</li>
+    <li>parseInt()메서드</li>
+    <li>parseFloat()메서드</li>
+  </ul>
+
+  <h2>number()메서드</h2>
+  <p>numver()는 자바스크립트 변수를 숫자로 변환하는데 사용할 수 있음.</p>
+  <p>날짜에 사용되는 number()메서드 : 날짜를 숫자로 변환 할 수 있음</p>
+  <p>날짜를 숫자로 변경하는 number()는 1.1.1970부터 밀리 초 수를 반환</p>
+
+  <h2>parseInt()메서드</h2>
+  <p>parseInt()는 문자열을 파싱하고 정수를 반환함. 공백은 허용. 첫 번째 숫자만 반환</p>
+  <p>parseInt("30 10 20"); //return 30</p>
+  <p>parseInt("10.33"); //return 10</p>
+
+
+  <h2>parseFloat()메서드</h2>
+  <p>parseFloat()은 문자열을 파싱하고 숫자를 반환. 공백은 허용. 첫 번째 숫자만 반환.</p>
+  <p>parseFloat("10.33"); //return 10.33</p>
+
+  <h2>숫자 속성</h2>
+  <ul>
+    <li>property : description</li>
+    <li>MAX_VALUE : 자바스크립트에서 가장 큰 숫자를 반환</li>
+    <li>MIN_VALUE : 자바스크립트에서 가장 작은 숫자를 반환</li>
+    <li>POSITIVE_INFINITY</li>
+    <li>NEGATIVE_INFINITY</li>
+    <li>NaN</li>
+  </ul>
+
+  <h2>변수에 숫자 속성을 사용할 수 없음.</h2>
+  <p>Number.MAX_VALUE로만 엑세스 할 수 있음.</p>
+
+</body>
+</html>
