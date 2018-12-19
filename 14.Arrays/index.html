@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
+
 <body>
   <h1>Arrays</h1>
   <p>자바스크립트 배열은 단일 변수에 여러 값을 저장하는 데 사용</p>
@@ -29,8 +31,8 @@
 
   <h2>배열 요소 변경</h2>
   <p>var cars = ["Saab","Volvo","BMW"];
-      cars[0] = "Opel";
-      documnet.getElementById("demo").innnerHTML = cars[0];
+    cars[0] = "Opel";
+    documnet.getElementById("demo").innnerHTML = cars[0];
   </p>
 
   <h2>전체 배열 엑세스</h2>
@@ -43,7 +45,7 @@
   <p>자바스크립트 변수는 객체가 될 수 있음. 배열은 특별한 종류의 객체</p>
   <p>이 때문에 동일한 배열에서 여러 유형의 변수를 가질 수 있음.</p>
   <p>배열은 객체를 가질 수 있음. 배열에 함수를 포함 할 수 있음. 배열에 배열을 가질 수 있음.</p>
-  
+
   <h2>배열 속성 및 메서드</h2>
   <p>자바스크립트 배열으 진정한 강점은 내장 배열 속성 및 메서드임.</p>
   <p>var x = car.length; // The length property returns the number of elements</p>\
@@ -56,26 +58,22 @@
   <h2>루핑 배열 요소</h2>
   <p>배열을 반복하는 가장 안전한 방법은 "for"루프를 사용하는 것</p>
   <p>var fruits, text, fLen, i;
-      fruits = ["Banana","Orange","Apple","Mango"];
-      fLen = fruits.length;
+    fruits = ["Banana","Orange","Apple","Mango"];
+    fLen = fruits.length;
 
-      text = "<ul>";
-      for (i = 0; i < fLen; i++){
-        text += '<li>' + fruits[i] + "</li>";
-      }
-      text += "</ul>";
-  </p>
-  <p>Array.forEach() 함수를 사용할 수도 있음</p>
+    text = "<ul>";
+      for (i = 0; i < fLen; i++){ text +='<li>' + fruits[i] + "</li>" ; } text +="</ul>" ; </p> <p>Array.forEach() 함수를
+        사용할 수도 있음</p>
   <p>
     var fruits, text;
     fruits = ["Banana","Orange","Apple","Mango"];
 
     text = "<ul>";
-    fruits.forEach(myFunction);
-    text += "</ul>";
+      fruits.forEach(myFunction);
+      text += "</ul>";
 
     function myFunction(value){
-      text += "<li>" + value + "</li>";
+    text += "<li>" + value + "</li>";
     }
   </p>
 
@@ -83,10 +81,59 @@
   <h2>배열요소 추가하기</h2>
   <p>새 요소를 배열에 추가하는 가장 쉬운 방법은 push 메서드를 사용하는 것</p>
   <p>var fruits = ["Banana","Orange","Apple","Mango"];
-    fruits.push("lemon"); 
+    fruits.push("lemon");
   </p>
   <p>마지막 요소 뒤에 추가됨.</p>
 
   <p>length 속성을 사용하여 새 요소를 배열에 추가 할 수 도 있음.</p>
+  <p>fruits[fruits.length] = "Lemon";</p>
+
+  <span>높은 인덱스를 가진 요소를 추가하면 배열에 정의되지 않은 '구멍'이 생길 수 있음.</span>
+
+  <h2>연관 배열</h2>
+  <p>많은 프로그래밍 언어는 명명된 인덱스를 사용하여 배열을 지원</p>
+  <p>명명된 인덱스가 있는 배열은 연관 배열 (또는 해시)이라고 함.</p>
+  <p>자바스크립트는 명명된 인덱스가 있는 배열을 지원 하지 않음.</p>
+  <p>자바 스크립트에서 배열은 항상 번호가 매겨진 색인을 사용</p>
+  <span>명명 된 인덱스를 사용하면 JavaScript가 배열을 표준 객체로 다시 정의 그런 다음 일부 배열 메서드와 속성은 잘못된 결과를 생성.</span>
+
+  <h2>배열과 객체의 차이점</h2>
+  <p>자바스크립트에서 배열은 번호가 매겨진 색인을 사용</p>
+  <p>자바스크립트에서 객체는 명명된 색인을 사용</p>
+  <span>배열은 번호가 매겨진 인덱스가 있는 특별한 종류의 객체</span>
+
+  <h2>배열을 사용해야하는 경우. 객체 사용시기</h2>
+  <p>자바스크립트는 연관 배열을 지원하지 않음.</p>
+  <p>요소 이름을 문자열(텍스트)로 만드려면 객체를 사용.</p>
+  <p></p>
+
+  <h2>new Array()를 피하라.</h2>
+  <p>자바스크립트의 기본 제공 배열 생성자인 new Array()를 사용할 필요가 없음.</p>
+  <p>대신 []를 사용.</p>
+  <p> var points = new Array(); //bad</p>
+  <p> var points =[]; //good</p>
+
+  <p>new 키워드는 코드를 복잡하게 함. 예기치 않은 결과를 발생시킴</p>
+
+  <h2>배열을 인식하는 방법</h2>
+  <p>변수가 배열인지 어떻게 알 수 있나??</p>
+
+  <P>해결책1:</P>
+  <P>Array.isArray(fruits); //return true</P>
+
+  <p>해결책2:</p>
+  <p>자신 만의 isArray()함수를 만들 수 있음.</p>
+  <p>인수가 배열이면 우의 함수는 항상 true를 반환</p>
+  <p>더 정확하게 : 객체 프로토 타입에 "Array"라는 단어가 포함 되어 있으면 true를 반환</p>
+  <p>function isArray(x){
+    return x.constructor.toString().indexof("Array") > -1;
+    }
+  </p>
+
+  <p>해결책3:</p>
+  <p>instanceof 객체가 주어진 생성자에 의해 생성되는 경우 true</p>
+  <p>var fruits =["banana","orange","apple","mango"]</p>
+  <p>fruits instanceof Array; //return true</p>
 </body>
+
 </html>
