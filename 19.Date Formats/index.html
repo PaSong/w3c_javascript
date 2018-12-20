@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>날짜 형식</h1>
+
+  <h2>날짜 입력</h2>
+  <p>ISO 날짜 : "2015-03-25"(국제표준)</p>
+  <p>짧은 날짜 : '03/25/2015'</p>
+  <p>긴 날짜 : '2015년 3월 25일'또는 '2015년 3월 25일'</p>
+  <span>ISO형식은 자바스크립에서 엄격한 표준을 따름</span>
+
+  <h2>JavaScript ISO 날짜</h2>
+  <p>ISO 8601 구문(YYYY-MM-DD)도 기본 JavaScript 날짜 형식</p>
+  <p>var d = new Date("2015-03-25");</p>
+  <span>계산 된 날짜는 귀하의 시간대를 기준으로 함.</span>
+  <span>시간대에 따라 위의 결과는 3월 24일과 3월 25일 사이에 달라짐</span>
+
+  <h2>ISO날자 (년 및 월)</h2>
+  <p>var d = new Date("2015-03");</p>
+  <span>시간대는 2월 28일과 3월 1일 사이에 결과가 달라짐</span>
+
+  <h2>ISO날짜(만년)</h2>
+  <p>var d = new Date("2015");</p>
+  <span>시간대는 2014년 12월 31일부터 2015년 1월 1일까지의 결과가 달라짐</span>
+
+  <h2>ISO 날짜(날짜-시간)</h2>
+  <p>var d = new Date("2015-03-25T12:00:00Z")</p>
+  <p>UTC(세계 협정 표준시)는 GMT(그리니치 표준시)와 동일</p>
+  <span>날짜 또는 시간 문자열에서 T또는 Z를 생략하면 다른 브라우저에서 다른 결과를 줄 수 있음.</span>
+
+  <h2>짧은 날짜</h2>
+  <p>var d = new Date("03/25/2015");</p>
+
+  <h2>경고</h2>
+  <p>일부 브라우저에서는 0이 없는 몇 개월 또는 몇일 동안 오류가 발생할 수 있음.</p>
+  <p>var d = new Date("2015-3-25");</p>
+
+  <p>yyyy/mm/dd의 동작은 정의되지 않음.</p>
+  <p>일부 브라우저는 형식을 추측하려고함. 일부는 NaN을 반환</p>
+  <p>var d = new Date("2015/03/25");</p>
+
+  <p>dd/mm/yyyy의 동작도 정의되지 않음</p>
+  <p>일부 브라우저는 형식을 추측하려고함.일부는 NaN을 반환</p>
+  <p>var d = new Date("25-03-2015");</p>
+
+  <h2>긴 날짜</h2>
+  <p>var d = new Date("Mar 25 2015");</p>
+
+  <P>월과 일은 어떤 순서로도 될 수 있음.</P>
+  <p>월은 전체(January)또는 약식(Jan)으로 작성할 수 있음</p>
+  <p>쉼표는 무시됨. 이름은 대소 문자를 구분하지 않음</p>
+
+  <h2>날짜 입력 - 파싱 날짜</h2>
+  <p>유효한 날짜 문자열이 있는 경우 Dtae.parse()메서드를 사용하여 밀리 초로 변환 할 수 있음.</p>
+  <p>Date.parse()는 날짜와 1970년1월1일 사이의 밀리 초 수를 반환</p>
+</body>
+
+</html>
