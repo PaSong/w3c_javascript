@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=s, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <h1>배열 반복</h1>
+    <p>배열 반복 메소드는 모든 배열 항목에서 작동</p>
+
+    <h2>Array.forEach()</h2>
+    <p>forEach()메서드는 각 배열 요소에 대해 한 번씩 한수 (콜백함수)를 호출함.</p>
+    <p>
+      var txt = "";
+      var numbers = [45,4,9,16,25];
+      numbers.forEach(myFunction);
+
+      function myFunction(value,index,array){
+        txt = txt + value + "</br>";
+      }
+    </p>
+    <p>forEach()함수는 3개의 인수를 취함</p>
+    <ul>
+      <li>vaule :항목의 값</li>
+      <li>index : 항목 색인</li>
+      <li>array : 배열 자체</li>
+    </ul>
+
+    <h2>Array.map()</h2>
+    <p>map() 메서드는 각 배열 요소에 대해 함수를 수행하여 새 배열을 만듬</p>
+    <p>map()메서드는 값없이 배열 요소의 기능을 실행하지 않음.</p>
+    <p>map()메서드는 원래 배열을 변경하지 않음.</p>
+
+    <p>map()함수는 3개의 인수를 취함</p>
+    <ul>
+      <li>value</li>
+      <li>index</li>
+      <li>array</li>
+    </ul>
+    <p>콜백 함수가 value 매개 변수 만 사용하면 index 및 array매개 변수를 생략 할 수있음</p>
+
+    <p>
+      var numbers1=[45,4,9,16,25];
+      var numbers2=numbers1.map(myFunction);
+
+      function myFunction(value){
+        return value * 2;
+      }
+    </p>
+
+    <h2>Array.filter()</h2>
+    <p>filter()메서드는 테스트를 통과하는 배열 요소를 사용하여 새 배열을 만듬</p>
+    <p>
+      var numbers=[45,4,9,16,25];
+      var over18 = numbers.filter(myFunction);
+
+      function myFunction(value,index,array){
+        return value > 18;
+      }
+    </p>
+    <p>filter()함수는 3개의 인수를 취함</p>
+    <ul>
+      <li>value</li>
+      <li>index</li>
+      <li>array</li>
+    </ul>
+
+    <h2>Array.reduce()</h2>
+    <p>reduce()메서드는 각 배열요소에서 하나의 값을 생성(감소)하는 함수를 실행</p>
+    <p>reduce()메서드는 배열의 왼쪽에서 오른쪽으로 작동. reduceRight()를 참조하삼.</p>
+    <span>reduce()메서드는 원래 배열을 축소하지 않음.</span>
+
+    <p>
+      var numbers1=[45,4,9,16,25];
+      var sum = numbers1.reduce(myFunction);
+
+      function myFunction(total, value, index, array){
+        return total + value;
+      }
+    </p>
+    <p> reduce()함수는 4개의 인수를 취함</p>
+    <ul>
+      <li>total(초기값/이전에 반환된값)</li>
+      <li>value</li>
+      <li>index</li>
+      <li>array</li>
+    </ul>
+
+    <h2>Array.reduceRight()</h2>
+    <p>reduceRight()메서드는 각 배열 요소에서 하나의 값을 생성(감소)하는 함수를 실행.</p>
+    <p>reduceRight()는 배열의 오른쪽에서 왼쪽으로 작동함.</p>
+    <span>원래 배열을 축소하지 않음.</span>
+    <p>
+      var numbers = [45,4,9,16,25];
+      var sum = numbers.reduceRight(myFunction);
+
+      document.getElementById("demo").innerHTML = "The sum is" + sum;
+
+      function myFunction(total,value,index,array){
+        return total + value;
+      }
+    </p>
+    <p> reduceRight()함수는 4개의 인수를 취함</p>
+    <ul>
+      <li>total(초기값/이전에 반환 된 값)</li>
+      <li>value</li>
+      <li>index</li>
+      <li>array</li>
+    </ul>
+    
+    <h2>Array.every()</h2>
+    <p>every()메소드는 모든 배열 값이 테스트를 통과하는지 확인</p>
+
+    <p>
+      var numbers = [45,4,9,16,25];
+      var allOver18 = numbers.every(myFunction);
+
+      function myFunction(value,index,array){
+        return value > 18;
+      }
+    </p>
+
+    <p>every() 함수는 3개의 인수를 취함.</p>
+    <ul>
+      <li>value</li>
+      <li>index</li>
+      <li>array</li>
+    </ul>
+
+    <h2>Array.some()</h2>
+    <p>some()메서드는 일부 배열 값이 테스트를 통과하는지 확인</p>
+    <p>
+      var numbers =[45,4,9,16,25];
+      var someOver18 = numbers.some(myFunction);
+
+      function myFunction(value,index,array){
+        return value > 18;
+      }
+    </p>
+    
+    <p>some() 함수는 3개의 인수를 취함.</p>
+    <ul>
+      <li>value</li>
+      <li>index</li>
+      <li>array</li>
+    </ul>
+
+    <h2>Array.indexOf()</h2>
+    <p>배열에서 요소 값을 검색하고 그 위치를 반환</p>
+    <p>
+      var a = fruits.indexof("apple"); // apple의 인텍스번호를 알려줌
+    </p>
+    <p>Array.indexOf()는 항목이 없으면 -1을 반환</p>
+    <p>항목이 두 번 이상 나타나는 경우 첫 번째 항목의 위치를 반환</p>
+
+    <h2>Array.lastIndexOf()</h2>
+    <p>Array.lastIndexOf()는 Array.indexof()와 같지만 배열의 끝에서 검색</p>
+    <p>var fruits = ['apple','orange','apple','mango'];</p>
+    <p>var a = fruits.lastIndexOf("apple"); // 2</p>
+
+    <h2>Array.find()</h2>
+    <p>find()메서드는 테스트 함수를 전달하는 첫 번쨰 배열 요소의 값을 반환</p>
+    <p>예제에서는 18보다 큰 첫 번째 요소를 찾거나 (값을 반환함)</p>
+
+    <h2>Array.findindex()</h2>
+    <p>findIndex()메서드는 테스트 함수를 전달하는 첫 번째 배열 요소의 인덱스를 반환</p>
+    <i>18보다 큰 숫자를 배열에서 찾아서 그에 해당하는 인덱스를 출력하시오</i>
+</body>
+</html>
