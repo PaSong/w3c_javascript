@@ -7,6 +7,54 @@
   <title>Document</title>
 </head>
 <body>
+  <h1>Date</h1>
+  <p>var d = new Date();</p>
+
+  <h2>날짜 객체 만들기</h2>
+  <p>Date 객체는 new Date() 생성자로 만들어짐</p>
+  <p>new Date()</p>
+  <p>new Date(year,month,day,hours,minutes,seconds,milliseconds)</p>
+  <p>new Date(milliseconds)</p>
+  <p>new Date(date string)</p>
+
+  <h2>new Date()</h2>
+  <p>현재 날짜와 시간으로 새 날짜 객체를 만듬</p>
+  <p>var d = new Date();</p>
+  <p>Date 객체는 정적임. 컴퓨터 시간은 똑딱 거리지만 날짜 개체는 그렇지 않음</p>
+
+  <h2>new Date(year,month,...)</h2>
+  <p>지정된 날짜와 시간으로 새 날짜 객체를 만듬.</p>
+  <p>7개의 숫자는 년,월,일,시간,분,초 및 밀.리 초를 순서대로 지정</p>
+  <p>var d = new Date(2018,11,24,10,33,30,0);</p>
+  <span>자바스크립트는 0에서 11까지 월을 계산함.</span>
+  <span>1월은 0임. 12월은 11.</span>
+  <span>달은 생략 할 수 없음. 매개변수 하나만 제공하면 밀리 초로 처리됨</span>
+
+  <h2>이전 세기</h2>
+  <p>한 자리와 두 자리 연도는 19xx로 해석</p>
+  <p>var d = new Date(99,11,24);</p>
+
+  <h2>새 날짜 (dateString)</h2>
+  <p>new Date(dateString)는 날짜 문자열에서 새 날짜 객체를 만듬.</p>
+  <p>var d = new Date("October 13, 2014 11:13:00");</p>
+
+  <h2>JavaScript 저장 날짜 밀리 초</h2>
+  <p>자바스크립트는 1970년1월1일 00:00:00 UTC(Universal Time Coordinated)이후로 밀리 초 단위로 날짜르 저장함</p>
+  <span>제로 시간은 1970년 1월1일 00:00:00 UTC임.</span>
+
+
+  <h2>new Date(milliseconds)</h2>
+  <p>new Date(milliseconds)는 0시간에 밀리 초를 더하여 새 날짜 객체를 만듬</p>
+  <p>var d = new Date(0);</p>
+  <span>하루 (24시간)는 86 400 000 밀리 초임.</span>
+
+  <h2>날짜 메소드</h2>
   
+  <h2>날짜 표시</h2>
+  <p>자바스크립트는 전체 텍스트 문자열 형식으로 날짜를 출력함(기본값)</p>
+  <p>Wed Mar 25 2015 09:00:00 GMT+0900 (한국 표준시)</p>
+  <p>toString() : 자동으로 문자열로 변환</p>
+  <p>toUTCSting() : 메소드는 UTC문자열 (날짜 표시 기준)에 날짜를 변환</p>
+  <p>toDateString() : 잃기 쉬운 형식으로 날짜 변환</p>
 </body>
 </html>
