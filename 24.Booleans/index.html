@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Boolean</h1>
+  <p>true 또는 false의 두 값 중 하나를 나타냄</p>
+
+  <h2>boolean값</h2>
+    <P>매우 자주 프로그래밍에서 두 가지 값 중 하나만 가질 수 있는 데이터 유형이 필요함.</P>
+  <ul>
+    <li>yes/no</li>
+    <li>no/off</li>
+    <li>TRUE/FALSE</li>
+  </ul>
+
+  <h2>Boolean()함수</h2>
+  <p>함수를 사용하여 표현식(또는 변수)이 참인지 확인할 수 있음.</p>
+  <p>Boolean(10>9) //return true</p>
+
+  <p>또는 더 쉽게</p>
+  <p>(10>9) // also returns true</p>
+  <p>10>9 // also returns true</p>
+
+  <h2>비교 및 조건</h2>
+  <ul>
+    <li> == </li>
+    <li> > </li>
+    <li> < </li>
+  </ul>
+
+  <h2>"가치"가 있는 모든 것은 참임.</h2>
+
+  <h2>"가치"가 없는 모든 것은 거짓임.</h2>
+  <ul>
+    <li>부울 값 0(영)은 false임.</li>
+    <li>-0</li>
+    <li>""(빈문자열)</li>
+    <li>undefined</li>
+    <li>null</li>
+    <li>false</li>
+    <li>NaN</li>
+  </ul>
+
+  <h2>개체가 될 수 있는 불린</h2>
+  <p>일반적으로 자바 스크립트 부울은 리터럴에서 생성 된 프리미티브 값임.</p>
+  <P>var x = false;</P>
+  <p>그러나 booleans는 키워드 new를 사용하여 객체로 정의할 수 있음.</p>
+  <p>var y = new (false);</p>
+
+  <p>var x = false; //typeof x  returns boolean</p>
+  <p>var y = new Boolean(false); returns object</p>
+
+  <span>Boolean 객체를 만들지마오. 실행 속도가 느려짐. new 키워드는 코드를 복잡하게 함.</span>
+  
+  <p> == 연산자를 사용하면 동등한 부울 값은 같음.</p>
+  <p>var x = false;  // x is boolean</p>
+  <p>var y = new Boolean(false);  //y is an object</p>
+  <p>document.getElementById("demo").innerHTML = (x == y); // true</p>
+
+  <p> === 연산자를 사용할 때 ==연산자는 형식과 값에서 동등성을 기대하므로 동등한 블린은 동일하지 않음.</p>
+  <p>var x = false;</p>
+  <p>var y = new Boolean(false);  // return false</p>
+
+  <span> (x == y)와 (x === y)의 차이점에 유의함.</span>
+  <span>두 개의 자바스크립트 객체를 비교하면 항상 false가 반환됨.</span>
+
+</body>
+</html>
