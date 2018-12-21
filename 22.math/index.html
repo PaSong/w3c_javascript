@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+   <h1>수학 객체</h1>
+
+   <h2>Math.round()</h2>
+   <p>Math.round(x)는 가장 가까운 정수로 반올림 한 x의 값을 반환함.</p>
+  <p>Math.round(4.7); //5</p>
+  <p>Math.round(4.4); //4</p>
+
+  <h2>Math.pow()</h2>
+  <p>Math.pow(x,y)는 x의 값을 y의 거듭 제곱으로 반환함.</p>
+  <p>Math.pow(8,2); //64</p>
+
+  <h2>Math.sqrt()</h2>
+  <p>Math.sqrt(x)는 x의 제곱근을 반환함.</p>
+  <p>Math.sqrt(64); //8</p>
+
+  <h2>Math.abs()</h2>
+  <p>Math.abs(x)는 x의 절대(양수)값을 반환함.</p>
+  <p>Math.abs(-4.7); //4.7</p>
+
+  <h2>Math.ceil()</h2>
+  <p>Math.ceil(x) x의 값을 반올림.</p>
+  <p>Math.ceil(4.4); //5</p>
+
+  <h2>Math.floor()</h2>
+  <p>Math.Floor(x)는 x의 값을 가장 가까운 정수로 반올림.</p>
+  <p>Math.floor(4.7); //4</p>
+
+  <h2>Math.sin()</h2>
+  <p>Math.sin(x)는 각도 x(사다리꼴로 주어진)의 사인(-1과1사이의 값)을 반환함.</p>
+  <p>라디안 대신도를 사용하려면 도를 라디안으로 변환해야 함.</p>
+  <p>라디안 단위의 각도 = 도 * PI/180의 각도</p>
+
+  <p>Math.sin(90 * Math.PI / 180); //return 1 (the sine of 90 degrees)</p>
+  <i>Math.PI = 원의 둘레와 지름의 비율, 약 3.14159의 값을 가짐</i>
+
+  <h2>Math.cos()</h2>
+  <p>Math.cos(0 * Math.PI /180); // return 1 (the cos of 0 degrees)</p>
+
+  <h2>Math.min() 및 Math.max()</h2>
+  <p>인수 목록에서 가장 낮은 값 또는 가장 높은 값을 찾는 데 사용할 수 있음.</p>
+
+  <P>Math.min(0,150,30,20,-8,-200); //return -200</P>
+  <p>Math.max(0,150,30,20,-8,-200); //return 150</p>
+
+  <h2>Math.random()</h2>
+  <p>Math.random()은 0(포함)과 1(포함하지 않음) 사이의 난수를 반환함.</p>
+
+  <h2>수학 속성(상수)</h2>
+  <p>Math 객ㅊ로 엑세스 할 수 있는 8개의 수학 상수를 제공함.</p>
+    <ul>
+      <li>Math.E</li>
+      <li>Math.PI</li>
+      <li>Math.SQRT2</li>
+      <li>Math.SQRT1_2</li>
+      <li>Math.LN2</li>
+      <li>Math.LN10</li>
+      <li>Math.LOG2E</li>
+      <li>Math.LOG10E</li>
+    </ul>
+
+  <h2>수학 생성자</h2>
+  <p>다른 전역 개체와 달리 Math 개체에는 생성자가 없음.메서드와 속성은 정적</p>
+  <p>Math 객체를 먼저 만들지 않고 모든 메서드와 속성(상수)을 사용할 수 있음.</p>
+  
+</body>
+</html>
