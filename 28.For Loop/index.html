@@ -18,8 +18,52 @@
   <p>for(i=0; i < cars.length; i++){ text +=cars[i] + "<br/>" ; } document.getElementById("demo").innerHTMl=text; </p>
       <p>다른 종류의 루프</p>
   <ul>
-    <li></li>
+    <li>for 여러 번 코드 블록을 반복</li>
+    <li>개체 속성을 통한 for/in -루ㅍ,</li>
+    <li>while - 지정된 조건이 true인 동안 코드 블록을 반환</li>
+    <li>do/while - 또한 지정된 조건이 참일 때 코드 블록을 반복</li>
   </ul>
+
+  <h2>for 루프</h2>
+  <p>for (statement 1; statement 2; statement 3){
+    //code block to be executed
+    }
+  </p>
+  <p>statement 1 은 코드 블록을 실행하기 전에 (한번) 실행됨.</p>
+  <p>statement 2는 코드 블록을 실행하기 위한 조건을 정의</p>
+  <p>statement 3은 코드 블록이 실행 된 후 (매번) 실행됨.</p>
+
+  <h2>statement 1</h2>
+  <p>일반적으로 statement1을 사용하여 루프에서 사용 된 변수를 초기회함.(i=0)</p>
+
+  <p>var cars =["bmw","volvo","saab","ford"];</p>
+  <p>var i, len, text;</p>
+  <p>for (i=0, len =cars.length, text=""; i < len; i++){ text +=cars[i] + "<br/>" ; }
+      document.getElementById("demo").innerHTML=text; </p> <p>Loop1이 시작되기 전에 값이 설정되는 경우처럼 statement1을 생략할 수 있음</p>
+
+
+  <h2>statement 2</h2>
+  <p>statemnet 2는 초기 변수의 조건을 평가하는데 종종 사용</p>
+  <p>statement 2는 선택사항 </p>
+  <p>statement 2가 true를 반환하면 루프가 다시 시작되고 false를반환하면 루프가 끝남</p>
+
+  <span>statement2를 생략하면 루프 내에 휴식을 제공해야함. 그렇지 않으면 루프가 안끝남.(브라우저 다운)</span>
+
+  <h2>statement 3 </h2>
+  <p>초기 변수의 값을 증가시킴</p>
+  <p>항상 그런것은 아니며 선택사항임.</p>
+  <p>생략도 가능</p>
+
+  <h2>For / In 루프</h2>
+  <p>객체의 속성을 반복</p>
+  <p>var person = {fname:"John",lname:"Doe",age:25};</p>
+  <p>var text = "";</p>
+  <p>var x;</p>
+  <p>for (x in person){
+    text += person[x] + "";
+    }
+    document.getElementById("demo").innerHTML = text;
+  </p>
 </body>
 
 </html>
