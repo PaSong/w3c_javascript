@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>스크립트 유형 변환</h1>
+  <p>Number()는 Number로 변환되고, String()은 String으로 변환되며, Boolean()은 부울로 변환됨</p>
+
+  <h2>데이터 유형</h2>
+  
+  <p>자바스크립트에는 값을 포함 할 수 있는 5가지 데이터 유형이 있음.</p>
+  <ul>
+    <li>String</li>
+    <li>Number</li>
+    <li>Boolean</li>
+    <li>object</li>
+    <li>function</li>
+  </ul>
+
+  <p>3가지 유형의 객체가 있음.</p>
+  <ul>
+    <li>object</li>
+    <li>Date</li>
+    <li>Array</li>
+  </ul>
+
+  <p>값을 포함 할 수 없는  2가지 데이터 타입</p>
+  <ul>
+    <li>null</li>
+    <li>undefined</li>
+  </ul>
+
+  <h2>연산자 유형</h2>
+  <p>typeof연산자를 사용하여 JavaScript변수의 데이터 유형을 찾을 수 있음.</p>
+
+  <p>
+    document.getElementById("demo").innerHTML= 
+    typeof "john" + "<br/>" + 
+    typeof 3.14 + "<br />" +
+    typeof NaN + "<br/>" +
+    typeof false + "<br/>" +
+    typeof [1,2,3,4] + "</br>" +
+    typeof {name : 'john', age:34} + "<br/>" +
+    typeof new Date() + "<br/>"+
+    typeof function () {} + "</br>" +
+    typeof myCar + "</br>"+
+    typeof null;
+  </p>
+
+<ul>
+  <li>NaN의 데이터 유형은 숫자임.</li>
+  <li>배열의 데이터 유형은 object임.</li>
+  <li>날짜의 데이터 유형은 객체</li>
+  <li>null의 데이터 형은 object임.</li>
+  <li>정의되지 않은 변수의 데이터 유형이 undefined</li>
+  <li>값을 할당받지 않은 변수의 데이터 유형도 undefined</li>
+</ul>
+
+<span>typeof를 사용하여 자바스크립트 객체가 배열(또는 날짜)인지 판단 할 수 없음.</span>
+
+<h2>형식의 데이터 형식</h2>
+<p>typeof 연산자는 변수가 아님. 운영자임. 연산자(+ - * /)에는 데이터 유형이 없음.</p>
+<p>그러나 typeof연산자는 항상 문자열(피연산자 유형 포함)을 반환.</p>
+
+<h2>생성자 속성</h2>
+<p>생성자 속성은 모든 자바 스크립트 변수의 생성자 함수를 반환</p>
+
+<p>
+  document.getElementById("demo").innerHTML = 
+  "john".constructor + "<br/>"+ 
+  (3.14).constructor + "<br/>"+
+  false.constructor + "<br/>"+
+  [1,2,3,4].constructor + "<br/>"+
+  {name:'john',age:34}.constructor + "<br/>"+
+  new Date().constrounctor + "<br/>" +
+  function () {}.constructor;
+</p>
+
+<p>생성자 속성을 검사하여 객체가 Array인지 여부를 확인할 수 있음.(Array라는 단어 포함)</p>
+<p>
+  var fruits =["banana","orange","apple","mango"];
+  document.getElemenetById("demo").innerHTML = isArray(fruits);
+
+  function isArray(myArray){
+    return myArray.constructor.toString().indexOf("Array") > -1;
+  }
+</p>
+
+<p>객체가 Array 함수인지 쉽게 확인 할 수 있음</p>
+<p>var fruits =["banana","orange","apple","mango"];</p>
+<p>document.getELementById("demo"),innerHTML = isArray(fruits);</p>
+<p>
+  function isArray(myArray){
+  return myArray.constructor === array;
+}
+</p>
+
+<h2>자바 스크립트 유형 변환</h2>
+<p>자바스크립트 변수는 새 변수 및 다른 데이터 유형으로 변환 할 수 있음</p>
+<ul>
+  <li>자바 스크립트 함수 사용</li>
+  <li>자바스크립트 자체에 의해 자동으로</li>
+</ul>
+
+<h2>숫자를 문자열로 변환</h2>
+<p>전역 메소드 String()은 숫자를 문자열로 변환 할 수 있음.</p>
+<p>숫자,리터럴,변수 또는 표현식의 모든 유형에서 사용할 수 있음.</p>
+
+<p>
+  var x = 123;
+  document.getElementById("demo").innerHTML =
+  String(x) + "<br>"+
+  String(123) + "<br>"+
+  String(100+23);
+</p>
+
+<p>Number 메소드 toString()도 동일함.</p>
+<p>var x =123;</p>
+<p>
+  document.getElementById("demo").innerHTML =
+  x.toString() + "<br>" +
+  (123).toString + "<br>" +
+  (100+23).toString();
+</p>
+
+<h2>부울을 문자열로 변환</h2>
+<p>전역 메소드 String()은 부울을 문자열로 변환 할 수 있음</p>
+<p>String(false) //return "false"</p>
+<p>String(true)  //return "true"</p>
+
+<p>toString()도 마찬가지 </p>
+<p>false.toString() // return "false"</p>
+<p>true.toString() //return  "true"</p>
+
+<h2>날짜를 문자열로 변환</h2>
+<p>String(Date()) </p>
+
+<p>toString()도 동일</p>
+<p>Date().toString()</p>
+
+<h2>문자열을 숫자로 변환</h2>
+<p>전역 메서드인 Number()은 문자열을 숫자로 변환 할 수 있음.</p>
+<p>빈 문자열은 0으로 변환</p>
+<p>다른 것은 NaN(숫자가 아님)으로 변환</p>
+
+<ul>
+  <li>Number("3.14") // return 3.14</li>
+  <li>Number(" ") //return 0</li>
+  <li>Number("") //return 0</li>
+  <li>Number("99 88") //return NaN</li>
+</ul>
+
+<h2>단항 + 연산자</h2>
+<p>단항 + 연산자는 숫자에 변수를 변환 할 수 있음</p>
+<p>
+  function myFunction(){
+    var y ="5";
+    var x = +y;
+    document.getElementById("demo").innerHTML = typeof y + "<br/>" + typeof x;
+  }
+</p>
+
+<h2>부울을 숫자로 변환</h2>
+<p>전역 메서드 인 Number()는 부울을 숫자로 변환 할 수도 있음.</p>
+<p>Number(false) //return 0</p>
+<p>number(true) //return 1</p>
+
+<h2>날짜를 숫자로 변환</h2>
+<p>전역 메서드 Number()는 날짜를 숫자로 변환하는데 사용할 수 있음.</p>
+<p>d = new Date()</p>
+<p>Number(d) //returns 1404568027739</p>
+
+<p>date 메소드 getTime()도 동일</p>
+<p>d = new Date();</p>
+<p>d.getTime() //returns 1404568027739</p>
+
+<h2>자동유형변환</h2>
+<p>자바스크립트가 "잘못된" 데이터 유형으로 작동하려고 하면 값을 "올바른" 유형으로 변환하려고 시도.</p>
+<p>하지만 항상 결과가 옳은것은 아님</p>
+
+<h2>자동 문자열 변환</h2>
+<p>자바스크립트는 객체 또는 변수를 "출력"하려고하면 자동으로 변수의 toString() 함수를 호출함.</p>
+<p>document.getElementById("demo").innerHTML = myVar;</p>
+<p>숫자와 불린도 변환되지만 이것은 잘 보이지 않음.</p>
+</body>
+</html>
