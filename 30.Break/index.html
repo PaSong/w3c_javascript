@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Break</h1>
+  <ul>
+    <li>break문</li>
+    <li>continue문</li>
+  </ul>
+
+  <h2>break문</h2>
+  <p>break문은 루프를 중단하고 루프(있는 경우)후 코드를 계속 실행</p>
+
+  <p>
+    var text = "";
+    var i;
+    for (i = 0; i < 10; i++){
+      if(i === 3){break;}
+      text += "The number is" + i + "</br>";
+    }
+    document.getElementById("demo").innerHTML = text;
+  </p>
+
+  <p>continue문</p>
+  <p>지정된 조건이 발생하고 루프의 다음 반복을 계속하는 경우,(루프)에 하나의 반복 휴식을</p>
+  <p>
+    var text = "";
+    var i;
+    for (i = 0;i < 10; i++){
+      if ( i === 3){ continue; }
+      text += "The number is" + i + "</br >"
+    }
+    document.getElementById("demo").innerHTML = text;
+  </p>
+  <i>i가 3일 경우 3을 건너뛰고 계속 진행한다.</i>
+
+  <h2>자바스크립트 라벨</h2>
+  <p>JavaScript 문에 레이블을 지정하려면 문 앞에 레이블 이름과 콜론이 있어야함.</p>
+  <p>label : statements</p>
+
+  <p>break와 continue문은 코드 블록에서 "뛰어 넘을"수 있는 유일한 JavaScript문임.</p>
+  <p>break labelname;</p>
+  <p>continue labelname;</p>
+
+  <p>continuew문(레이블 참조 유무와 관계없이)은 루프반복을 건너 뛸 때만 사용할 수 있음.</p>
+  <p>레이블 참조가 없는 break문은 루프 또는 스위치 밖으로 점프하는 경우에만 사용할 수 있음</p>
+  <p>레이블 참조를 사용하면 break문을 사용하여 코드 블록에서 빠져 나올 수 있음.</p>
+
+  <p>
+    var cars = ['bmw','volvo','saab','ford'];
+    var text = "";
+
+    list: {
+      text += cars[0] + "</br>"
+      text += cars[1] + "</br>"
+      break list;
+      text += cars[2] + "</br>"
+      text += cars[3] + "</br>"
+    }
+    document.getElementById("demo").innerHTML = text;
+  </p>
+</body>
+</html>
