@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>정규표현식</h1>
+  <p>정규 표현식은 검색 패턴을 형성하는 일련의 문자임.</p>
+  <p>텍스트 검색 및 텍스트 바꾸기 작업에 검색 패턴을 사용할 수 있음.</p>
+
+  <h2>정규 표현식이란 무엇입니까?</h2>
+  <p>정규 표현식은 검색 패턴을 형성하는 일련의 문자임.</p>
+  <p>텍스트의 데이터를 검색 할 때 이 검색 패턴을 사용하여 검색 대상을 설명할 수 있음.</p>
+  <p>정규 표현식은 단일 문자 또는 더 복잡한 패턴이 될 수 있음.</p>
+  <p>정규식을 사용하여 모든 유형의 텍스트 검색 및 텍스트 바꾸기 작업을 수행 할 수 있음.</p>
+
+  <p>/pattern/modifiers;</p>
+  <p>var patt = /w3schools/i;</p>
+  <p>/w3schools/i는 정규식임.</p>
+  <p>w3schools는 (검색에 사용될) 패턴임.</p>
+  <p>i는 수식어이다(대/소문자를 구별하지 않도록 검색을 수정함).</p>
+
+  <h2>문자열 메소드 사용하기</h2>
+  <p>자바스크립트에서 정규 표현식은 search() 및 replace()의 두 문자열 메서드와 함께 사용됨.</p>
+  <p>search()메서드는 표현식을 사용하여 일치 항목을 검색하고 일치 항목의 위치를 반환</p>
+  <p>replace()메소드는 패턴이 대체되는 수정 된 문자열을 리턴</p>
+
+  <h2>문자열 검색을 사용하여 문자열()</h2>
+  <p>search()메서드는 문자열에서 지정된 값을 검색하고 일치하는 위치를 반환</p>
+
+  <p>
+    var str ="Visit W3Schools!";
+    var n = str.search("W3Schools");
+    document.getElementById("demo").innerHTML = n;
+  </p>
+
+  <h2>문자열 검색() 정규 표현식 사용</h2>
+  <p>문자열에서 "w3schools"에 대해 대/소문자를 구분하지 않고 검색하려면 정규 표현식을 사용.</p>
+  <p>var str = "Visit W3Schools!";</p>
+  <p>var n = str.search(/w3Schools/i);</p>
+  <p>document.getElementById("demo").innerHTML = n;</p>
+
+  <h2>문자열 사용 replace()를 String으로 사용</h2>
+  <p>replace()메서드는 지정된 값을 문자열의 다른 값으로 바꿈</p>
+  <p>
+    function myFunction(){
+      var str = document.getElementById("demo").innerHTML;
+      var txt = str.replace("Microsoft","W3Schools");
+      document.getElementById("demo").innerHTML = txt;
+    }
+  </p>
+
+  <span>위의 메소드에서는 정규표현식 인수(문자열 인수 대신)를 사용할 수 있슴.</span>
+  <span>정규 표현식은 검색을 훨씬 강력하게 만들 수 있음(대소문자를 구분하지 않음)</span>
+
+  <h2>정규 표현식 수정 자</h2>
+  <p>수식어는 대문자와 소문자를 구별하는 글로벌 검색을 실시하기 위해서 사용할 수 있음.</p>
+  <ul>
+    <li>i</li>
+    <li>g</li>
+    <li>m</li>
+  </ul>
+
+</body>
+</html>
