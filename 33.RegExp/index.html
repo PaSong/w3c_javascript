@@ -64,5 +64,47 @@
     <li>m</li>
   </ul>
 
+  <h2>정규식 패턴</h2>
+  <p>대괄호는 일련의 문자를 찾는데 사용</p>
+  <ul>
+    <li>[abc]</li>
+    <li>[0-9]</li>
+    <li>(x|y)</li>
+  </ul>
+
+  <p>메타 문자는 특별한 의미의 문자</p>
+  <ul>
+    <li>\d</li>
+    <li>\s</li>
+    <li>\b</li>
+    <li>\uxxxx</li>
+  </ul>
+
+  <p>수량 한정자는 수량을 정의</p>
+  <ul>
+    <li>n+</li>
+    <li>n*</li>
+    <li>n?</li>
+  </ul>
+
+  <h2>RegExp객체 사용</h2>
+  <p>RegExp객체는 미리 정의 된 속성 및 메서드가 있는 정규 표현식 객체</p>
+
+  <h2>test()사용하기</h2>
+  <p>test()메서드는 RegExp표현식 메서드</p>
+  <p>문자열에서 패턴을 검색하고 결과에 따라 true 또는 false를 반환</p>
+  <p>text = document.getElementById("p01").innerHTML;</p>
+  <p>document.getElementById("demo").innerHTML = /e/.test(text);</p>
+
+  <h2>exec()사용하기</h2>
+  <p>exec()메서드는 RegExpㅠㅛ현식 메서드</p>
+  <p>문자열에서 지정된 패턴을 검색하고 발견된 텍스트를 객체로 반환</p>
+  <p>일치하는 항목이 없으면 빈(null)객체를 반환</p>
+  <p>
+    var obj =/e/.exec("The best things in life are free!");
+    document.getElementById("demo").innerHTML =
+    "Found" + obj[0] + "in position" + obj.index + "in the text :" +
+    obj.input;
+  </p>
 </body>
 </html>
