@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Throw and Try to Catch</h1>
+  <ul>
+    <li>try : 오류 코드 블록을 테스트 할 수 있음</li>
+    <li>catch : 오류를 처리 할 수 있음</li>
+    <li>throw : 사용자 정의 오류를 만들 수 있음</li>
+    <li>finally : 결과에 관계없이,시도 및 캐치 후, 코드를 실핼 할 수 있음</li>
+  </ul>
+
+
+  <h2>오류가 발생합니다.</h2>
+  <p>자바스크립트 코드를 실행할 때 다른 오류가 발생할 수 있음</p>
+  <p>오류는 프로그래머가 작성한 코딩 오류, 잘못된 입력으로 인한 오류 및 기타 예측할 수 없는 것들이 될 수 있음.</p>
+  <p>
+    try{
+      adddlert("Welcome guest!");
+    }
+    catch(err){
+      document.getElementById("demo").innerHTML =err.message;
+    }
+  </p>
+  <span>JavaScript는 adddlert를 오류로 처리하고 이를 처리하기 위해 catch코드를 실행</span>
+
+<h2>JavaScript try and catch</h2>
+<p>try문은 당신이 그것을 실행하는 동안 오류를 테스트 할 코드 블록을 정의 할 수 있음.</p>
+<p>catch try블록에서 오류가 발생하면 문, 당신은 코드 블록이 실행되도록 정의 할 수 있음.</p>
+<p>try 및 catch JavaScript문은 쌍으로 제공됨.</p>
+
+<p>
+  try{
+    Block of code to try
+  }
+  catch(err){
+    Block od code to handle errors
+  }
+</p>
+
+<h2>자바 스크립트 오류 발생</h2>
+<p>오류가 발생하면 JavaScript가 정상적으로 중지되고 오류 메시지가 생성됨.</p>
+<p>기술적인 용어는 다음과 같음.JavaScript가 예외를 throw함.(오류발생)</p>
+<span>JavaScript는 실제로 name과 message의 두 가지 속성을 가진 Error객체를 만듬.</span>
+
+<h2>throw문</h2>
+<p>throw문을 사용하면 사용자 지정 오류를 만들 수 있음</p>
+<p>기술적으로 예외를 throw할 수 있음(오류발생)</p>
+<p>예외는 자바 스크립트 문자열,숫자,부울 또는 객체 일 수 있음</p>
+
+<p>throw "Too big"; //throw a text</p>
+<p>throw 500; // throw a number</p>
+<p>당신이 사용하는 경우 슬로우와 함께 try 및 catch, 당신은 프로그램의 흐름을 제어 및 사용자 지정 오류 메시지를 생성할 수 있음.</p>
+
+<h2>입력 검증 예제</h2>
+<p>입력을 검사함. 값이 틀리면 예외(err)가 발생</p>
+<p>예외(err)가 catch문에 의해 catch되고 사용자 정의 오류 메시지가 표시됨</p>
+
+<p>
+  function myFunction(){
+    var message, x;
+    message = document.getElementById("p01");
+    message.innerHTML = "";
+    x = document.getElementById("demo").value;
+    try{
+      if(x == "") throw "empty";
+      if(isNaN(x)) throw "not a number";
+      x = Number(x);
+      if(x < 5) throw "too low";
+      if(x > 10) throw "too high";
+    }
+    catch(err){
+      message.innerHTML = "Input is" + err;
+    }
+  }
+</p>
+
+<h2>HTML 유효성 검사</h2>
+<p>최신 브라우저는 HTML 속성에 정의 된 사전 정의 된 유효성 검사 규칙을 사용하여 </p>
+<p>JavaScript와 내장 된 HTML 유효성 검사를 조합하여 사용함.</p>
+<p>
+  <input id="demo" type="number" min="5" max="10" step="1"
+</p>
+
+<h2>마침내 성명</h2>
+<p>finally문은 결과에 관계없이, 시도 및 캐치 후, 코드를 실행할  수 있음.</p>
+<p>
+  try{
+    Block fo code to try
+  }
+  catch(err){
+    Block of code to handle errors
+  }
+  finally{
+    Block of code to be executed regardless of the try / catch result
+  }
+</p>
+
+<h2>오류 개체</h2>
+<p>JavaScript에는 오류가 발생할 때 오류 정보를 제공하는 오류 개체가 내장되어 있음</p>
+<p>오류 개체는 이름과 메시지라는 두가지 유용한 속성을 제공함</p>
+
+<h2>오류 개체 속성</h2>
+<p>이름 : 오류 이름을 설정하거나 반환함</p>
+<p>메시지 : 오류 메시지 (문자열)를 설정하거나 반환함</p>
+
+<h2>오류 이름 값</h2>
+<p>오류 이름 등록 정보에서 6개의 다른 값을 리턴 할 수 있음</p>
+
+<ul>
+  <li>EcalError : eval() 함수에서 오류가 발생</li>
+  <li>RangeError : 숫자 "범위를 벗어났습니다."가 발생</li>
+  <li>ReferenceError : 잘못된 참조가 발생</li>
+  <li>SyntaxError : 구문 오류가 발생</li>
+  <li>TypeError : 유형 오류가 발생</li>
+  <li>URIError encodeURT()오류가 발생</li>
+</ul>
+
+<h2>평가 오류</h2>
+<p>EcalError는 eval()함수에 대한 오류를 나타냄</p>
+<span>최신 버전의 JavaScript는 EcalError를 발생시키지 않음. 대신 SyntaxError를 사용</span>
+
+<h2>범위 오류</h2>
+<p>오류 RangeError 당신이 유효한 값의 범위를 벗어나는 숫자를 사용하는 경우 발생</p>
+<p>예: 숫자의 유효 자릿수를 500으로 설정할 수 없음</p>
+
+<p>
+  var num = 1;
+  try{
+    num.toPrecision(500);
+  }
+  catch(err){
+    document.getElementById("demo").innerHTML = err.name;
+  }
+</p>
+
+<h2>참조 오류</h2>
+<p>ReferenceError가는 당신이 (참조) 선언되지 않은 변수를 사용하는 경우 발생함</p>
+<p>
+  var x;
+  try{
+    x = y +1;
+  }
+  catch(err){
+    document.getElementById("demo").innerHTML = err.name;
+  }
+</p>
+
+<h2>구문 오류</h2>
+<p>구문 에러는 당신이 구문 오류로 코드를 평가하려고 하면 발생</p>
+<p>
+  try{
+    eval("alert('Hello')");
+  }
+  catch(err){
+    document.getElementById("demo").innerHTML = err.name;
+  }
+</p>
+
+<h2>유형 오류</h2>
+<p>형식 오류는 예상 유형의 범위를 벗어나는 값을 사용하는 경우 발생</p>
+<p>
+  var num =1;
+  try{
+    num.toUpperCase();
+  }
+  catch(err){
+    document.getElementById("demo").innerHTML =err.name;
+  }
+</p>
+
+<h2>URI(Uniform Resource Identifier)오류</h2>
+<p>URIError의는 당신이 URI기능에 잘못된 문자를 사용하는 경우 발생</p>
+<p>
+  try{
+    decodeURI("%%%");
+  }
+  catch(err){
+    document.getElementById("demo").innerHTML = err.name;
+  }
+</p>
+
+<h2>비표준 오류 개체 속성</h2>
+<p>Mozilla와 Microsoft는 몇 가지 비표준 오류 객체 속성을 정의</p>
+<ul>
+  <li>fileName 모질라</li>
+  <li>lineNumber 모질라</li>
+  <li>columnNumber 모질라</li>
+  <li>스택 모질라</li>
+  <li>설명 마이크로 소프트</li>
+  <li>번호 마이크로 소프트</li>
+</ul>
+</body>
+</html>
