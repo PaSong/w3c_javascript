@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>this Keyword</h1>
+  <p>
+    //Create an object;
+    var persong ={
+      firstName : "John",
+      lastName : "Doe",
+      id : 5566,
+      fullName : function(){
+        return this.firstName + "" + this.lastName;
+      }
+    };
+
+    //Display data from the objext:
+    document.getElementById("demo").innerHTML = person.fullName();
+  </p>
+
+  <h2>what is this</h2>
+  <p>자바 스크립트 this 키워드는 이 속한 객체를 참조</p>
+  <span>this  값은 사용되는 위치에 따라 다른 값을 가짐.</span>
+
+  <ul>
+    <li>메소드에서 this는 소유자 객체를 참조 함.</li>
+    <li>혼자,this는 전역 객체를 참조 함</li>
+    <li>함수에서 this는 전역책체를 참조 함.</li>
+    <li>함수에서 엄격한 모드에서는 this 안됨</li>
+    <li>이벤트에서 this는 이벤트를 수신 한 요소를 나타냄</li>
+    <li>call() 및 apply()와 같은 메소드는 this를 모든 객체로 참조 할 수있음</li>
+  </ul>
+
+  <h2>this 하는 Method에서 </h2>
+  <p>객체 메소드에서 this는 메소드의 "소유자"를 참조함</p>
+  <p>이 페이지의 맨 위에 예에서, this받는 의미 인 개체</p>
+  
+  <h2>this 혼자</h2>
+  <p>단독으로 사용하는 경우, 소유자는 전역 객체이기 때문에 this 글로벌 객체를 참조함.</p>
+  <p>브라우저 창에서 전역 개체는 [개체 창]임/</p>
+  <p>
+    var x = this;
+    document.getElementById("demo").innerHTML = x;
+    //[objdect Window]
+  </p>
+
+  <p>strict 모드 단독으로 사용되는 경우, this 또한 전역객체 [object Window]</p>
+
+  <h2>this 기능(기본값)</h2>
+  <p>자바 스크립트 함수에서 함수의 소유자임. 기본 바인딩 this</p>
+  <p>
+    document.getElementById("demo").innerHTML = myFunction();
+    function myFunction(){
+      return this;
+    }
+
+    //[object Window]
+  </p>
+
+  <h2>this 기능(엄격)</h2>
+  <p>자바 스크립트 strict 모드는 기본 바인딩을 허용하지 않음</p>
+  <p>함수에서 사용할 때, strict모드에서 this임. 정의되지 않음</p>
+
+  <p>
+    "use strict";
+    document.getElementById("demo").innerHTML = myFunction();
+    function myFunction(){
+      return this;
+    }
+
+    // undefined
+  </p>
+
+  <h2>이벤트 핸들러의 this</h2>
+  <p>HTML 이벤트 핸들러에서 this는 이벤트를 수신 한 HTML 요소를 나타냄</p>
+  <p>
+    <button conclick="this.style.display='none'">click to Remove Me!</button>
+  </p>
+
+  <h2>개체 메서드 바인딩</h2>
+  <p>Person 객체 함수의 "소유자"임</p>
+  <p>
+    var person = {
+      firstName: "john",
+      lastName : "Doe",
+      id : 5566,
+      fullName : function(){
+        return this.firstName + "" + this.lastName;
+      }
+    };
+  </p>
+  <p>즉, this.firstName은(사람)객체의 firstName속성을 의미</p>
+
+  <h2>명시 적 함수 바인딩</h2>
+  <p>()를 호출 및 적용()방법은 미리 정의 된 자바 스크립트 방법</p>
+  <p>그것들은 둘 다 인자로서 다른 객체를 가진 객체 메소드를 호출하는데 사용될 수 있음</p>
+  <p>
+    var person1 = {
+      fullName: function(){
+        return this.firstName + "" + this.lastName();
+      }
+    }
+    var person2={
+      firstName: "John",
+      lastName: "Doe",
+    }
+    var x = person1.fullName.call(person2);
+    document.getElementById("demo").innerHTML = x;
+  </p>
+</body>
+</html>
