@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Strict  엄격한 사용</h1>
+  <p>"엄격한 사용":JavaScript 코드가 "엄격 모드"로 실행되어야 한다고 정의함.</p>
+
+  <h2>"엄격한 사용" 지침</h2>
+  <p>"strict use"지시문은 ECMAScript 버전 5에서 새로 추가되었음.</p>
+  <p>리터럴 표현식이며 이전 버전의 JavaScript에서는 무시됨</p>
+  <p>"엄격한 사용"은 코드가 "엄격 모드"로 실행되어야 함을 나타내기위한 것</p>
+  <p>엄격 모드에서는 예를들어 선언되지 않은 변수를 사용할 수 없음. </p>
+  <p>모든 최신 브라우저는 Internet Explore9 이하를 제외하고 "엄격한 사용"을 지원함.</p>
+
+  <h2>엄격 모드 선언</h2>
+  <p>엄격 모드는 "use strict"를 추가하여 선언됨. 스크립트 또는 함수의 시작 부분</p>
+  <p>스크립트 시작 부분에 선언되어 전역 범위를 갖음.(스크립트의 모든 코드는 엄격 모드로 실행됨)</p>
+
+  <p>
+    "use strict";
+    x = 3.14 // This sill cause an error (x is not defined)
+  </p>
+  <p>
+    "use strict";
+    myFunction();
+
+    function myFunction(){
+      y = 3.14; // This will cause an error (y is not defined)
+    }
+  </p>
+  <p>
+    x = 3.14;
+    myFunction();
+
+    function myFunction(){
+      "use strict";
+      y =3.14; //This will cause an error(y is not defined)
+    }
+  </p>
+
+  <h2>엄격한 사용 통사론</h2>
+  <p>엄격 모드 선언을 위한 구문은 이전 버전의 JavaScript와 호환되도록 설계되었음.</p>
+  <p>JavsScript프로그램에서 숫자 리터럴(4+5;)또는 문자열 리터럴("John Doe";)을 컴파일하면 부작용이 없음</p>
+  <p>단순히 존재하지 않는 변수로 컴파일되고 종료됨.</p>
+  <p>그래서 strict 그것의 의미를 "이해"하는 새로운 컴파일러에만 중요함.</p>
+
+  <h2>왜 엄격한 모드입니까?</h2>
+  <p>strict모드를 사용하면 "안전한"JavaScript를 더 쉽게 작성할 수 있음.</p>
+  <p>strict 모드는 이전에 허용 된 "잘못된 구문"을 실제 오류로 변경함</p>
+  <p>예를 들어, 일반적인 JavaScript에서는 변수 이름을 잘못 입력하면 새로운 전역 변수가 만들어짐.</p>
+  <p>엄격 모드에서는 실수로 전역 변수를 만들 수 없으므로 오류가 발생함.</p>
+  <p>일반적인 JavaScript에서는 개발자가 쓰기 권한이 없는 속성에 값을 할당하는 오류 피드백을 받지 못함.</p>
+  <p>엄격 모드에서 쓰기 권한이 없는 속성, 가져오기 전용 속성, 존재하지 않는 속성, 존해하지 않는 변수 또는 존재하지 않는 객체에 대한 할당은 오류를 발생시킴.</p>
+
+  <h2>엄격 모드에서는 허용되지 않음</h2>
+  <p>변수를 선언하지 않고 사용하는 것은 허용되지 않음.</p>
+  <span>객체도 변수임.</span>
+
+  <p>선언하지 않고 객체를 사용하는 것은 허용되지 않음.</p>
+
+  <p>변수(또는 객체) 삭제는 허용되지 않음</p>
+  <p>
+    "use strict";
+    var x = 3.14;
+    delete x; //This will cause an error
+  </p>
+
+  <p>함수 삭제는 허용되지 않음</p>
+  
+  <p>매개 변수 이름을 복제하는 것은 허용되지 않음</p>
+  <p>
+    "use strict";
+    function x(p1,p1){}; //This will cause an error
+  </p>
+
+  <p>8진 숫자 리터럴은 허용되지 않음.</p>
+  <p>
+    "use strict";
+    var x = 010; //This will cause an error
+  </p>
+
+  <p>8 진수 이스케이프 문자는 허용되지 않음</p>
+  <p>
+    "use strict";
+    var x ="\010"; //This will cause an error
+  </p>
+
+  <p>읽기 전용 속성에 쓰는 것은 허용되지 않음.</p>
+  <p>
+    "use strict";
+    var obj = {};
+    object.defineProperty(obj,"x",{value:0, writable:false});
+
+    obj.x = 3.14; //This will cause an error
+  </p>
+
+  <p>get 전용 속성에 쓰는 것은 허용되지 않음.</p>
+  <p>
+    "use strict";
+    var obj = {get x() {return 0} };
+
+    obj.x=3.14; //This will cause an error
+  </p>
+
+  <p>삭제할 수 없는 속성 삭제는 허용되지 않음</p>
+  <p>
+    "use strict";
+    delete Object.prototype; // This will cause an error
+  </p>
+
+  <p>문자열 "eval"은 변수로 사용할 수없음.</p>
+   <p>
+     "use strict";
+     var eval = 3.14; //This will cause an error
+   </p>
+
+  <p>문자열 "arguments"는 변수로 사용할 수 없음</p>
+  <p>
+    "use strict";
+    var arguments = 3.14; //This will cause an error
+  </p>
+
+  <p>with문은 사용할 수 없음.</p>
+  <p>
+    "use strict";
+    with (Math){x = cos(2)}; //This will cause an error
+  </p>
+
+  <P>보안상의 이유로 eval()은 호출 된 범위에서 변수를 만들 수 없음</P>
+  <p>
+    "use strict";
+    eval ("var x = 2 ");
+    alert(x); //This will cause an error
+  </p>
+
+  <p>f()와 같은 함수 호출에서 이 값은 전역 객체였음. 엄격 모드에서는 이제 정의되지 않음.</p>
+
+  <h2>Future Proof!</h2>
+  <p>향휴 자바 스크립트 버전 용으로 예약 된 키워드는 엄격 모드에서 변수 이름으로 사용할 수 없음.</p>
+  <ul>
+    <li>implements</li>
+    <li>interface</li>
+    <li>let</li>
+    <li>package</li>
+    <li>private</li>
+    <li>protected</li>
+    <li>public</li>
+    <li>static</li>
+    <li>yield</li>
+  </ul>
+
+  <h2>조심해!</h2>
+  <p>"strict"지시문은 스크립트 또는 함수의 시작부분에서만 인식됨</p>
+</body>
+</html>
