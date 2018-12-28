@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>자바 스크립트 Hoisting</h1>
+  <p>Hoisting은 선언을 맨 뒤로 이동시키는 JavsScript 기본 동작임.</p>
+
+  <h2>자바 스크립트 선언은 기출되었음.</h2>
+  <p>JavaScript에서는 변수를 사용한 후에 변수를 선언 할 수 있음.</p>
+  <p>다른 말로 변수는 선언되기 전에 사용될 수 있음.</p>
+  <p>아래 예제는 동일한 결과를 보여줌</p>
+  <p>
+    x = 5;
+    elem = document.getElementById("demo"); //Find an element
+    elem.innerHTML = x; //Display x in the element
+
+    var x; //Declare x
+  </p>
+
+  <p>
+    var x; // Declare  x 
+    x = 5; //Assign 5 to x 
+
+    elem = document.getElementById("demo"); // Find an element
+    elem.innerHTML = x;
+  </p>
+<p>이를 이해하려면 "호이스팅(hoisting)"이라는 용어를 이해해야함.</p>
+<p>hoisting은 모든 선언을 현재 범위의 맨 위로 이동하는 JavaScript의 기본 동작임.(현재 스크립트 또는 현재 함수의 맨 위까지)</p>
+
+<h2>let 및 const 키워드</h2>
+<span>let 또는 const로 선언된 변수 및 상수는 올리지 않음</span>
+
+<h2>자바 스크립트 초기화는 호이스트가 아님.</h2>
+<p>자바 스크립트는 초기화가 아닌 선언 만 호이스트함.</p>
+<p>아래 예제는 다른 결과를 제공 하지 않음.</p>
+
+<p>
+  var x = 5; //Initialize x;
+  var y = 7; //Initialize y;
+
+  elem = document.getElementById("demo"); //Find an element
+  elem.innerHTML = x + "" + y; //Display x and y 
+</p>
+<p>
+  var x =5; //Initialize x 
+
+  elem = document.getElementById("demo");  //Find an element 
+  elem.innerHTML = " x is" + x + "and y is" + y; //Display x and y 
+
+  var y  = 7; //Initialize y
+</p>
+
+<p>마지막 예제에서 y가 정의되지 않았습니까?</p>
+<p>이것은 선언 (var y)이 초기화(=7)가 아닌 위쪽으로 끌어 올려지기 때문임.</p>
+<p>hoisting으로 인해 y는 사용되기 전에 선언되었지만 초기화가 수행되지 않기 때문에 y값은 정의되지 않음.</p>
+
+
+<h2>변수를 맨 위에 선언하십시오</h2>
+<p>Hoistion은(많은 개발자에게) 알려지지 않거나 간과 한 JavaScript의 동작</p>
+<p>개발자가 호이스팅을 이해하지 못하면 프로그램에 버그(오류)가 있을 수 있음.</p>
+<p>버그를 피하려면 항상 모든 범위의 시작 부분에 모든 변수를 선언하십시오.</p>
+<span>엄격 모드의 JavaScript는 선언되지 않은 변수를 사용할 수 없음. </span>
+</body>
+</html>
