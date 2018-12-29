@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Let</h1>
+  <p>ECMAScript 2015</p>
+  <p>ES2015에서는 let과 const라는 두 가지 중요한 새 JavaScript 키워드를 도입</p>
+  <p>이 두 키워드는 Block Scope변수(및 상수)를 제공</p>
+  <p>ES2015이전에는 JavaScript의 범위가 전역 범위 와 함수 범위의 두 가지 유형 밖에 없었음.</p>
+
+  <h2>글로벌 범위</h2>
+  <p>변수 선언 global(어떤 함수 외부)가 글로벌 범위</p>
+  <p>
+    var carName ="Volvo";
+    myFunction();
+
+    function myFunction(){
+      document.getElementById("demo").innerHTML = "I can display" + carName;
+    }
+  </p>
+  <p>전역 변수는 JavaScript프로그램의 어느 곳에서나 액세스 할 수 있음.</p>
+
+  <h2>기능 범위</h2>
+  <p>함수 내에서 Locally로 선언 된 변수에는 Function Scope가 있음.</p>
+  <p>
+    myFunction();
+
+    function myFunction(){
+      var carName = "Volvo";
+      document.getElementById("demo1").innerHTML = typeof
+      carName + "" + carName;
+    }
+    document.getElementById("demo2").innerHTMl = typeof carName;
+  </p>
+  <p>지역 변수는 선언 된 함수 내에서만 액세스 할 수 있음</p>
+
+  <h2>자바 스크립트 블록 범위</h2>
+  <p>var키워드로 선언 된 변수는 블록 범위를 가질 수 없음</p>
+  <p>{}블록 내에서 선언 된 변수는 블록 외부에서 액세스 할 수 있음</p>
+  <p>let키워드로 선언 된 변수는 블록 범위르 가질 수 있음.</p>
+  <p>블록{}안에 선언된 변수는 블록 외부에서 액세스 할 수 없음</p>
+
+  <p>
+    {
+      let x =2;
+    }
+    // x can NOT be used here
+  </p>
+
+  <h2>변수 재 선언</h2>
+  <p>var키워드를 사용하여 변수를 다시 선언하면 문제가 발생할 수 있음</p>
+  <p>블록 내에서 변수를 다시 선언하면 해당 변수가 블록 외부에서 재 선언됨.</p>
+  <p>
+    var x =10;
+    //Here x is 10
+    {
+      var x = 2;
+      //Here x is 2
+    }
+    //Here x is 2
+  </p>
+
+  <p>let 키워드를 사용하여 변수를 다시 선언하면 이 문제를 해결할 수 있음.</p>
+  <p>블록 내에서 변수를 다시 선언해도 블록 외부의 변수는 다시 선언되지 않음</p>
+  <p>
+    var x = 10;
+    //Here x is 10
+    {
+      let x = 2;
+      //Here x is 2
+    }
+    //Here x is 10
+    document.getElementById("demo").innerHTML = x;
+  </p>
+
+  <h2>브라우저 지원</h2>
+  <p>Internet Explorer11이하에서는 let키워드가 완전히 지원되지 않음</p>
+
+  <h2>루프 범위</h2>
+  <p>루프에서 var 사용하기:</p>
+  <p>
+    var i =5;
+    for (var i = 0; i < 10; i ++){
+      //some ststements
+    }
+    document.getElementById("demo").innerHTML = i;
+    //Here i is 10
+  </p>
+
+  <p>루프에서 let사용하기:</p>
+  <p>
+    let i = 5;
+    for (let i = 0; i < 10; i++){
+      //some statements
+    }
+    document.getElementById("demo").innerHTMl = i;
+    // Here i is 5
+  </p>
+  <p>let이 루프에서 i변수를 선언하는 데 사용 되면 i변수는 루프내에서만 볼 수 있음</p>
+
+  <h2>기능 범위</h2>
+  <p>var 및 let으로 선언 된 변수는 함수 내에서 선언 될 때 매우 유사함</p>
+  <p>그들은 둘 다 Function Scope:</p>
+  <p>
+    function myFunction(){
+      var carName = "Volvo"; //Function Scope
+    }
+  </p>
+  <p>
+    function myFunction(){
+      let carName = "Volvo"; //Function Scope
+    }
+  </p>
+
+  <h2>글로벌 범위</h2>
+  <p>var 및 let으로 선언 된 변수는 블록 외부에서 선언 될 때 매우 유사함</p>
+  <p>둘 다 Global Scope:</p>
+
+  <h2>HTMl의 전역 변수</h2>
+  <p>자바스크립트를 사용하면 전역 범위가 자바스크립트 환경임</p>
+  <p>HTML에서 전역 범위는 윈도우 객체임</p>
+  <p>var 키워드로 정의 된 전역 변수는 윈도우 객체에 속함</p>
+  <p>
+    var carName = "Volvo";
+    //code here can use window.carName
+    document.getElementById("demo").innerHTML = "I can display" + window.carName;
+
+    // I can display Volvo
+  </p>
+  <p>let 키워드로 정의된 전역 변수는 윈도우 객체에 속하지 않음</p>
+  <p>// I cam dosplay undefined</p>
+
+  <h2>재 선언</h2>
+  <p>var를 사용하여 JavaScript변수를 다시 선언하는 것은 프로그램의 어느 위치에서나 허용됨</p>
+  <p>동일한 범위 또는 동일한 블록에서 let을 사용하여 var변수를 다시 선언하는 것은 허용되지 않음</p>
+  <p>
+    var x = 2; // Allowed
+    let x = 3; //Not Allowed
+
+    {
+      var x = 4; //Allowed
+      let x =5; // Not allowed
+    }
+  </p>
+
+  <p>재 선언 하자 가변 하자를 동일한 범위 또는 동일한 블록에서 허용되지 않음.</p>
+  <p>
+
+  </p>
+</body>
+</html>
