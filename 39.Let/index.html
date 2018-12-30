@@ -150,7 +150,48 @@
 
   <p>재 선언 하자 가변 하자를 동일한 범위 또는 동일한 블록에서 허용되지 않음.</p>
   <p>
-
+    let x = 2; //Allowed
+    let x =3; //Not allowed
+    {
+      let x =4; //Allowed
+      let x =5;  //Not allowed
+    }
   </p>
+
+  <p>let변수를 동일한 범위 또는 동일한 블록에서 var로 다시 선언하는 것은 허용되지 않음</p>
+  <p>
+    let x = 2; //Allowed
+    var x = 3; //Not allowed
+    {
+      let x =4; //Allowed
+      var x =5; //Not allowed
+    }
+  </p>
+  <p>let, 다른 범위 또는 다른 블록에서 변수를 다시 선언하는 것은 허용됨</p>
+  <p>
+    let x = 2; //Allowed
+    {
+      let x = 3; //Allowed
+    }
+    {
+      let x = 4; //Allowed
+    }
+    document.getElementById("demo").innerHTML = x;
+    // 2
+  </p>
+
+  <h2>호이스팅</h2>
+  <p>var로 전의 된 변수는 맨 위에 올림</p>
+  <p>선언되지 전에 변수를 사용할 수 있음</p>
+  <p>
+    carName = "Volvo";
+    document.getElementById("demo").innerHTML =carName;
+    var carName;
+    //Volvo
+  </p>
+
+  <p>let으로 정의 된 변수는 맨위에 올리지 않음</p>
+  <p>변수가 선언되기 전에 let변수를 사용하면 ReferenceError가 됨.</p>
+  <p>블록의 시작부터 변수가 선언 될때까지 변수는 "일시적인 불감대"에 있음</p>
 </body>
 </html>

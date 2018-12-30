@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Const</h1>
+  <p>const로 정의 된 변수는 재 할당 할 수 없다는 점을 제외하고 let변수와 같이 동작함</p>
+  <p>
+    try{
+      const PI = 3.141592653589793;
+      PI = 3.14;
+    }
+    catch(err){
+      document.getElementById("demo").innerHTML = err;
+    }
+  </p>
+</body>
+</html>
