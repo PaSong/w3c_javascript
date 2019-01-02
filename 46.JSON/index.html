@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h2>JSON</h2>
+  <p>JSON은 데이터를 저장하고 전송하기 위한 형식임</p>
+  <p>JSON은 데이터가 서버에 웹 퍼이지로 전송 될 때 자주 사용됨</p>
+
+  <h2>JSON이란 무엇임?</h2>
+  <p>JavsScript Objecct Notation의 약자</p>
+  <p>간단한 데이터 교환 형식</p>
+  <p>언어와 무관</p>
+  <p>"자체설명"하고 이해하기 쉬움</p>
+  <p>JSON구문은 JavaScript객체 표기법 구문에서 파생되지만 JSON형식은 텍스트임.</p>
+  <p>JSON데이터를 읽고 생성하는 코드는 모든 프로그래밍 언어로 작성할 수 있음</p>
+
+  <h2>JSON 예제</h2>
+  <p>
+    {
+      "employees":[
+        {"firstName":"John","lastName":"Doe"},
+        {"firstName":"Anna","lastName":"Smith"},
+        {"firstName":"Perter","lastName":"Jones"}
+      ]
+    }
+  </p>
+
+  <h2>JSON형식이 JavaScript객체를 평가함</h2>
+  <p>JSON 형식은 구문 적으로 JavaScript객체를 작성하는 코드와 동일</p>
+  <p>이러한 유사성 때문에 JavaScript프로그램은 JSON데이터를 기본 JavaScript 객체로 쉽게 변환 할 수 있음</p>
+
+  <h2>JSON 구문 규칙</h2>
+  <p>데이터 이름/값 쌍임</p>
+  <p>데이터는 쉼표로 구분됨</p>
+  <p>중괄호는 객체를 유지함</p>
+  <p>대괄호는 배열을 유지함</p>
+
+  <h2>JSON데이커 - 이름 및 값</h2>
+  <p>JSON 객체는 중괄호 안에 작성됨</p>
+  <p>이름 / 값 쌍은 필드 이름(큰 따옴표로 묶임)과 콜론, 값 다음으로 구성됨</p>
+  <p>"firstName":"John"</p>
+  <p>JSON이름에는 큰 따옴표가 필요함. 자바스크립트 이름은 그렇지 않음</p>
+
+  <h2>JSON 객체</h2>
+  <p>JSON 객체는 중괄호 안에 작성됨</p>
+  <p>자바스크립트와 같음</p>
+
+  <h2>JSON 배열</h2>
+  <p>배열은 대괄호 안에 작성됨</p>
+  <p>자바스크립트와 마찬가지로 배열에는 객체가 포함될 수 있음</p>
+
+  <h2>JSON 텍스트를 JavaScript 객체로 변환</h2>
+  <p>JSON의 일반적인 용도는 웹 서버에서 데이터를 읽고 웹 페이지에 데이터를 표시하는 것임</p>
+  <p>간단하게 하기위해 문자열을 입력으로 사용하여 시연 할 수 있음</p>
+  <p>
+    var text = '{"employees":['+
+    '{"firstName":"John","lastName":"Deo"},'+
+    '{"firstName":"Anna","lastName":"Smith"},'+
+    '{"firstName":"Peter","lastName":"Jones"}]}';
+
+    obj = JSON.parse(text);
+    docuement.getElementById("demo").innerHTML =
+    obj.empoyees[1].firstName + " " + obj.employees[1].lastName;
+  </p>
+</body>
+</html>
