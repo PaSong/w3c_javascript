@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>자바 스크립트 객체</h1>
+  <span>JavaScript에서는 객체가 왕이됨. 객체를 이애하면 자바 스크립트를 이해하게 됨</span>
+
+  <p>JavaScript에서는 거의 모든 것이 "객체"임</p>
+  <ul>
+    <li>부울은 객체 일 수 있음(new 키워드로 정의 된 경우)</li>
+    <li>숫자는 객체가 될 수 있음(new 키워드로 정의 된 경우)</li>
+    <li>문자열은 객체가 될 수 있음(new 키워드로 정의 된 경우)</li>
+    <li>날짜는 항상 객체</li>
+    <li>수학은 항상 객체</li>
+    <li>정규 표현식은 항상 객체</li>
+    <li>배열은 항상 객체</li>
+    <li>함수는 항상 객체</li>
+    <li>객체는 항상 객체</li>
+  </ul>
+  <p>프리미티브를 제외한 모든 JavaScript값은 객체임</p>
+
+  <h2>자바 스크립트 기본 요소</h2>
+  <p>프리미티브 값은 어떤 특성 또는 방법이 없는 값임.</p>
+  <p>기본 데이터 형식은 원기 값을 갖는 데이터임.</p>
+
+  <ul>
+    <li>string</li>
+    <li>number</li>
+    <li>boolean</li>
+    <li>null</li>
+    <li>undefined</li>
+  </ul>
+
+  <p>원시적 치는 불변임(하드 코드외어 있어 변경할 수 업음)</p>
+  <span>x =3.14이면 x의 값을 변경할 수 있음. 그러나 3.14의 값은 변경할 수 없음</span>
+
+  <h2>객체는 변수임</h2>
+  <p>JavaScript변수는 단일 값을 포함 할 수 있음</p>
+  <p>객체도 변수임. 그러나 객체에는 많은 값이 포함될 수 있음</p>
+  <p>
+    var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+  </p>
+  <span>자바스크립트 객체는 명명된 값의 모음</span>
+
+  <h2>객체 속성</h2>
+  <p>JavaScript 객체의 명명된 값을 속성이라고 함</p>
+  <p>이름 값 쌍으로 작성된 객체는 다음과 유사함</p>
+  <ul>
+    <li>PHP의 연관 배열</li>
+    <li>파이썬 사전</li>
+    <li>C의 해시 테이블</li>
+    <li>Java의 해시 맵</li>
+    <li>루비와 펄의 해시</li>
+  </ul>
+
+  <h2>객체 메소드</h2>
+  <p>메서드는 개체에서 수행 할 수 있는 작업임</p>
+  <p>객체 속성은 프리미티브 값, 다른 객체 및 함수가 될 수 있음</p>
+  <p>객체 메소드 있는 객체 속성 인 함수 정의</p>
+  <span>JavaScript 객체는 속성 및 메소드라고 하는 명명된 값의 컨테이너임</span>
+
+  <h2>JavaScript 객체 만들기</h2>
+  <p>자바스크립트를 사용하면 자신 만의 객체를 정의하고 작성할 수 있음</p>
+  <ul>
+    <li>객체 리터럴을 사용하여 단일 객체를 정의하고 만듬</li>
+    <li>키워드 new를 사용하여 단일 개체를 정의하고 만듬</li>
+    <li>개체 생성자를 정의한 다음 생성 된 형식의 개체를 만듬</li>
+  </ul>
+  <span>ECMAScript5에서는 Objext.create()함수를 사용하여 객체를 만들 수 있음</span>
+
+  <h2>객체 리터럴 사용</h2>
+  <p>자바스크립트 객체를 만드는 가장 쉬운 방법</p>
+  <p>객체 리터럴을 사용하면 하나의 명령문에서 객체를 정의하고 만들 수 있음</p>
+  <p>객체 리터럴은 중괄호 {} 안에 name:value쌍의 목록임</p>
+  
+  <h2>Javascript 키워드 사용하기 new</h2>
+  <span>new Object()를 사용할 필요가 없음</span>
+  <span>단순성, 가독성 및 실행 속도를 위해 첫 번째 (객체 리터럴 메소드)를 사용하십시오</span>
+
+  <h2>자바스크립트 객체는 변경 가능함</h2>
+  <span>자바스크립트 변수는 변경할 수 없음. 자바스크립트 객체만 가능.</span>
+</body>
+</html>
