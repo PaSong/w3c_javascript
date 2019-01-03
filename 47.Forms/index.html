@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>자바스크립트 양식</h1>
+  
+
+  <h2>자바 스크립트 양식 유요성 검사</h2>
+  <p>HTML 폼 유효성 검사는 JavaScript로 수행 할 수 있음</p>
+  <p>양식 필드 (fname)가 비어있는 경우이 함수는 양식을 제출하지 못하도록 메시지를 경고하고 False를 반환함</p>
+  <p>
+    function validateForm() {
+      var x = document.forms["myForm"]["fname"].value;
+      if(x == ""){
+        alert("Name must be filled out");
+        return false;
+      }
+    }
+  </p>
+
+<p>이 함수는 양식을 제출할 때 호출 할 수 있음</p>  
+<p>
+  <from name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+  Name: <input type="text" name="fname">
+  <input type="submit" value="Submit">
+</p>
+
+<h2>JavaScript로 숫자 입력을 검증 할 수 있음</h2>
+<p>JavaScript는 종종 숫자 입력의 유효성을 검샇는데 사용함</p>
+
+<h2>자동 HTML양식 유효성 검사</h2>
+<p>HTML 폼 유효성 검사는 브라우저에서 자동으로 수행 할 수 있음</p>
+<p>양식 필드 (fname)가 비어 있으면 필수 속성이 이 양식을 제출하지 못하게 함</p>
+
+<p>
+  <form action="/action_page.php" method="post">
+    <input type="text" name="fname" required>
+    <input type="submit" vaule="Submit">
+</p>
+<span>Internet Explorer9이하 버전에서는 자동 HTML양식 유효성 검사가 작동하지 않음</span>
+
+<h2>데이터 유효성 검사</h2>
+<p>데이터 유효성 검사는 사용자 입력이 깨끗하고 정확하며 유용하다는 것을 보증하는 프로세스임</p>
+<ul>
+  <li>사용자가 모든 필수 필드를 채우고 있나?</li>
+  <li>사용자가 유효한 날짜를 입력 했음?</li>
+  <li>사용자가 숫자 필드에 텍스트를 입력 했음?</li>
+</ul>
+
+<p>대부분의 경우 데이터 유효성 검사의 목적은 올바른 사용자 입력을 보장하는 것임</p>
+<p>유효성 검사는 여러 가지 방법으로 정의 할 수 있으며 다양한 방법으로 배포 할 수 있음</p>
+<p>서버 측 유효성 검증은 입력이 서버로 송신 된 후 웹 서버에 의해 수행됨</p>
+<p>클라이언트 측 유효성 검사는 입력이 웹 서버로 전송되기 전에 웹 브라우저에 의해 수행됨</p>
+
+<h2>HTML 제약 조건 검증</h2>
+<p>HTML5는 제약 조건 유효성 검사라는 새로운 HTML유효성 검사 개념을 도입함</p>
+<ul>
+  <li>제약 조건 유효성 검사 HTML 입력 속성</li>
+  <li>제약 조건 검증 CSS Pseudo Selectors</li>
+  <li>제약 조건 유효성 검사 DOM 속성 및 메서드</li>
+</ul>
+</body>
+</html>
