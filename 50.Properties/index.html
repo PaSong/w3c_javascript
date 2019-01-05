@@ -16,6 +16,66 @@
   <p>속성은 일반적으로 변경, 추가 및 삭제할 수 있지만 일부는 읽기 전용</p>
 
   <h2>자바스크립트 속성에 액세스하기</h2>
-  <p></p>
+  <p>objectName.property //person.age</p>
+  <p>objectName["property"] //person["age"]</p>
+  <p>objectName[expression]  //x ="age"; person[x]</p>
+  <span>표현식은 특성 이름으로 평가되어야함</span>
+
+  <h2>루프용 자바 스크립트</h2>
+  <p>JavaScript for ... in문은 객체의 속성을 반복함</p>
+
+  <p>
+    for(variable in object){
+      //code to be executed
+    }
+  </p>
+  <p>for ... in 루프 내부의 코드 블록은 각 속성에 대해 한번 실행됨</p>
+
+
+  <h2>새 속성 추가하기</h2>
+  <p>기존 객체에 값을 지정하여 새 객체를 추가 할 수 있음</p>
+  <p>
+    var person ={
+      firstname:"John",
+      lastname:"Doe",
+      age:50,
+      eyecolor:"blue"
+    };
+
+    person.nationality = "English";
+    document.getElementById("demo").innerHTML =
+    person.firstname + "is" + person.nationlity + ".";
+  </p>
+
+  <h2>속성 삭제하기</h2>
+  <p>삭제 키워드는 객체로부터 속성을 삭제함</p>
+  <p>
+    var person ={
+      firstname:"John",
+      lastname:"Doe",
+      age:50,
+      eyecolor:"blue"
+    };
+
+    delete person.age;
+    document.getElementById("demo").innerHTML =
+    person.firstname+"is"+person.age + "years old.";
+  </p>
+  <p>delete 키워드는 속성 값과 속성 자체를 모두 삭제함</p>
+  <p>삭제후에 속성을 다시 추가하기 전에 사용할 수 없음</p>
+  <p>delete연산자는 객체 속성에서 사용하도록 설계되었음</p>
+  <p>변수나 함수에 영향을 미치지 않음</p>
+  <p>사전 정의된 JavaScript객체 속성에는 delete 연산자를 사용하면 안됨</p>
+  <p>그것은 귀하의 응용 프로그램을 크래시 수 있음</p>
+
+  <h2>속성의 속성</h2>
+  <p>모든 속성에는 이름이 있음.</p>
+  <p>값은 속성의 속성 중 하나임.</p>
+  <p>JavaScript에서는 모든 속성을 읽을 수 있지만 value속성만 병경할 수 있음 (속성이 쓰기 가능인 경우에만 가능)</p>
+  <p>ECMAScript5에는 모든 속성 속성을 가져오고 설정하는 메소드가 있음</p>
+
+  <h2>프로토 타입 속성</h2>
+  <p>자바스크립트객체는 프로토 타입의 속성을 상속받음</p>
+  <p>delete키워드는 상속된 속성을 삭제하지않지만 prototype속성을 삭제하면 프로토타입에서 상속 된 모든 객체에 영향을 줌</p>
 </body>
 </html>
