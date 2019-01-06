@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Methods</h1>
+<p>
+  var person ={
+    firstName: "John",
+    lastName:"Doe",
+    id : 5566,
+    fullName : function(){
+      return this.firstName + ""+ this.lastName;
+    }
+  };
+
+  //display data from the object:
+  document.getElementById("demo").innerHTML =
+  person.fullName();
+</p>
+
+<h2>this 키워드</h2>
+<p>함수 정의에서 this 함수의 "소유자"를 참조함</p>
+<p>위의 예에서 this는 IS인 목적은 "소유"한 FullName의 기능</p>
+<p>즉 this.firstName은 this객체의 firstName 속성을 의미함</p>
+
+<h2>자바 스크립트 메소드</h2>
+<p>자바스크립트 메소드는 객체에서 수행 할 수 있는 액션임</p>
+<p>JavaScript메소드는 함수 정의를 포함하느 속ㄴ성</p>
+<span>메서드는 객체 속성으로 저장되는 함수임</span>
+</body>
+</html>
