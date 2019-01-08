@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>객체 생성자</h1>
+  <p>
+    //Constructor function for Person objects
+    function Person(first, last, age, eye){
+      this.firstName = first;
+      this.lastName = last;
+      this.age = age;
+      this.eyeColor = eye;
+    }
+
+    //Create a Person object
+    var myFather = new Person("John", "Doe", 50, "blue");
+
+    //Display age
+    document.getElementById("demo").innerHTMl =
+    "My father is" + myFather.agge + ".";
+  </p>
+
+  <span>대문자의 첫 문자로 생성자 함수의 이름을 지정하는 것이 좋음</span>
+
+  <h2>객체 유형 (청사진)</h2>
+  <p>때로는 동일한 "유형"의 많은 객체를 만들기위한 "청사진"이 필요함</p>
+  <p>"객체 유형"을 만드는 방법은 객체 생성자 함수를 사용하는 것임</p>
+  <p>같은 유형의 객체는 new 키워드를 사용하여 생성자 함수를 호출함</p>
+
+  <h2>this 키워드</h2>
+  <p>자바 스크립트에서 this를 호출하는 것은 코드를 "소유"하는 객체임</p>
+  <p>값 this객체에 사용될 때, 객체 자체임</p>
+  <span>this 변수가 아님. 키워드임. this 값을 변경할 수 없음</span>
+
+  <h2>객체에 속성 추가하기</h2>
+  <p>
+
+    function Person(first, last, age, eye){
+      this.firstName = first;
+      this.lastName = last;
+      this.age = age;
+      this.eyeColor = eye;
+    }
+
+    var myFather = new Person("John", "Doe", 50, "blue");
+    var myMother = new Person("Sally", "Rally", "48", "green");
+
+    myFather.nationality = "English";
+
+    document.getElementById("demo").innerHTML =
+    "My father is" + myFather.nationnality;
+
+    //My father is English
+    </p>
+
+
+    <h2>객체에 메서드 추가</h2>
+    <p>
+
+      function Person(first, last, age, eye){
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+      }
+  
+      var myFather = new Person("John", "Doe", 50, "blue");
+      var myMother = new Person("Sally", "Rally", "48", "green");
+  
+      myFather.name = function() {
+        return this.firstName + " " + this.lastName;
+      }
+  
+      document.getElementById("demo").innerHTML =
+      "My father is" + myFather.name();
+  
+      //My father is John Doe
+      </p>
+
+      <h2>생성자에 속성 추가하기</h2>
+      <p>기본 객체에 새 속성을 추가하는 것과 같은 방법으로 객체 생성자에 새 속성을 추가 할 수 없음</p>
+      <p>생성자에 새 속성을 추가하려면 생성자 함수에 추가해야함</p>
+      <p>
+        // Constructor function for Person objects
+        function Person(first, last, age, eye) {
+          this.firstName = first;
+          this.lastName = last;
+          this.age = age;
+          this.eyeColor = eye;
+          this.nationality = "English";
+        }
+
+        // Create 2 Person objects
+        var myFather = new Person("John", "Doe", 50, "blue");
+        var myMother = new Person("Sally", "Rally", 48, "green");
+
+        // Display nationality
+        document.getElementById("demo").innerHTML =
+        "My father is " + myFather.nationality + ". My mother is " + myMother.nationality; 
+      </p>
+
+      <h2>생성자에 메서드 추가</h2>
+      <p>생성자 함수는 메소드를 정의 할 수도 있음</p>
+      <p>
+        function Person(first, last, age, eye){
+          this.firstName = first;
+          this.lastName = last;
+          this.age = age;
+          this.eyeColor = eye;
+          this.name = function(){
+            return this.firstName + " " + this.lastName
+          };
+        }
+
+        var myFather = new Person("John", "Doe", 50, "blue");
+
+        document.getElementById("demo").innerHTML =
+        "My father is" + myFather.name();
+
+        //My father is John Doe
+      </p>
+
+      <p>기존 객체에 새 메서드를 추가하는 것과 같은 방법으로 객체 생성자에 새 메서드를 추가 할 수 없음</p>
+      <p>객체에 메소드를 추가하는 작업은 생성자 함수 내에서 수행해야 함</p>
+      <p>
+
+        // 위의 예제와 동일
+        this.changeName = function (name){
+          this.lastName = name;
+        };
+      </p>
+
+      <p>changeName()함수는 name값을 person의 lastName 속성에 할당함</p>
+
+      <h2>빌트인 자바 스크립트 생성자</h2>
+      <p>자바스크립트에는 기본 객체에 대한 기본 생성자가 있음</p>
+
+      <p>
+        var x1 = new Object();
+        var x2 = new String();
+        var x3 = new Number();
+        var x4 = new Boolean();
+        var x5 = new Array();
+        var x6 = new RegExp();
+        var x7 = new Function();
+        var x8 = new Date();;
+      </p>
+      <p>Mat() 객체가 목록에 없음. 수학은 전역 개체임. new 키워드는 수학에 사용할 수 없음</p>
+
+      <h2>알고 계셨습니까?</h2>
+      <p>위에서 볼 수 있듯이 JavaScript에는 String, Number, Boolean과 같은 기본 데이터 유형의 객체 버전이 있음</p>
+      <p>그러나 복잡한 객체를 만들 이유가 없음. 원시 값이 훨씬 빠름</p>
+
+      <p>
+        var x1 = {};
+        var x2 = "";
+        var x3 = 0;
+        var x4 = false;
+        var x5 = [];
+        var x6 = /()/;
+        var x7 = function(){};
+      </p>
+</body>
+</html>
