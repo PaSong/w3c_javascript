@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Prototype</h1>
+  
+  <h2>프로토 타입 상속</h2>
+  <p>모든 자바스크립트 객체는 프로토 타입에서 속성과 메서드를 상속받음</p>
+  <p>Date 객체는 Date.prototype에서 상속받음. Array객체는 Array.prototype에서 상속 받음</p>
+  <p>Person 객체는 Person.prototype에서 상속 받음</p>
+  <p>object.prototype은 프로토 타임 상속 체인의 맨 위에 있음</p>
+  <p> Date 객체, Array 객체 및 Person 객체는 Object.prototype에서 상속받음</p>
+
+  <h2>객체에 속성 및 메서드 추가</h2>
+
+  <h2>Using 프로토 타입 속성</h2>
+  <p>자바스크립트 프로토 타입속성을 사용하면 객체 생성자에 새 속성을 추가 할 수 있음</p>
+  <p>
+      function Person(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+      }
+
+      Person.prototyoe.nationality = "English";
+  </p>
+
+  <p>자바스크립트 프로토 타입 속성을 사용하면 객체 생성자에 새 메서드를 추가 할 수 있음</p>
+</body>
+</html>
