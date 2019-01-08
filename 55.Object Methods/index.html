@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Object Methods</h1>
+
+  <h2>속성 값 변경</h2>
+  <p>object.defineProperty(object, property, {value : value})</p>
+
+  <p>
+    var person ={
+      firstName : "John";
+      lastName : "Doe";
+      language : "EN"
+    }
+
+    Object.defineProperty(person, "language", {value:"NO"})
+    document.getElementById("demo").innerHTML = person.language;
+
+    //NO
+  </p>
+
+  <h2>메타 데이터 변경</h2>
+  <p>ES5를 사용하면 다음 속성 데이터를 변경할 수 있음</p>
+  <p>ES5를 사용하면 getter 및 setter를 변경할 수 있음</p>
+  <p>언어를 읽기 전용으로 만듬</p>
+  <p>Object.defineProperty(person, "language", {writable:false});</p>
+  <p>언어를 열거 할 수 없도록 만듬</p>
+  <p>Object.defineProperty(person, "language", {enumerable:false});</p>
+
+  <h2>모든 속성 나열</h2>
+  <p> 
+    var person ={
+      firstName : "John",
+      lastName : "Doe",
+      language : "EN"
+    }
+
+    Object.defineProperty(person, "language", {enumerable:false});
+
+    document.getElementById("demo").innerHTML = Object.getOwnPropertyName(person);
+
+    //firstName,LastName,language
+  </p>
+
+  <h2>열거 가능 속성 나열</h2>
+  
+  <h2>속성 추가하기</h2>
+
+  <h2>게터와 세터 추가하기</h2>
+
+  <h2>반대 사례</h2>
+</body>
+</html>
