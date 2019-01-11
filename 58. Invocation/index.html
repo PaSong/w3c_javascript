@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <p>자바스크립트 내의 코드 function은 "무언가"가 호출 할 때 실행됨</p>
+
+  <h2>함수 호출하기</h2>
+  <p>함수가 정의 될 때 함수 내의 코드는 실행되지 않음</p>
+  <p>함수 내부의 코드는 함수가 호출 될 때 실행 됨</p>
+  
+  <h2>함수를 함수로 호출</h2>
+  <p>myFunction()과 window.myFunction()은 같은 함수</p>
+  <span>window 호출은 함수를 호출하는 일반적인 방법이지만 아주 좋은 방법은 아님</span>
+  <span>전역변수, 메소드 또는 함수는 전역 객체에 이름 충돌 및 버그를 쉽게 만들 수 있음</span>
+
+  <h2>this키워드</h2>
+  <p>자바스크립트에서 호출되는 것은 this현재 코드를 "소유"하는 객체임</p>
+  <p>값은 this함수에서 사용될 때 함수를 소유하는 객체임</p>
+  <span>this는 변수가 아님. 키워드임. 값을 변경할 수는 없음</span>
+
+  <h2>전역객체</h2>
+  <p>함수가 owner 객체없이 호출되면 값은 this전역 객체가 됨</p>
+  <p>웹 브라우저에서 전역 개체는 브라우저 창임</p>
+  <p>
+    var x = myFunction();
+    function myFunction() {
+      return this;
+    }
+    document.getElementById("demo").innerHTML = x;
+
+    // object Window
+  </p>
+
+  <span>함수를 전역 함수로 호출하면 this값 this 전역객체가 됨</span>
+  <span>변수로 윈도우 객체를 사용하면 쉽게 프로그램을 중단시킬 수 있음</span>
+
+  <h2>메소드로서의 함수 호출</h2>
+  <p>자바스크립트에서는 함수를 객체 메소드로 정의 할 수 있음</p>
+  <p>
+    var myObject = {
+      firstName : "John",
+      lastName : "Doe",
+      fullName : function() {
+        return this.firstName + " " + this.lastName;
+      }
+    }
+    document.getElementById("demo").innerHTML = myObject.fullName();
+
+    //John Doe
+  </p>
+
+  <h2>함수 생성자로 함수 호출하기</h2>
+  <p>함수 호출에 new키워드가 선행되면 이는 생성자 호출임</p>
+  <p>새 함수를 만드는 것처럼 보이지만 자바스크립트 함수는 객체이기 떄문에 실제로 새 객체를 만듬</p>
+  <p>
+    function myFunction(arg1, arg2) {
+      this.firstName = arg1;
+      this.lastName = arg2;
+    }
+
+    var x = new myFunction("Jone", "Doe")
+    document.getElementById("demo").innerHTML =x.firstName;
+
+    // John
+  </p>
+</body>
+</html>
