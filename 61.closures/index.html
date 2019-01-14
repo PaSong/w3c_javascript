@@ -28,6 +28,55 @@
     <p>지역변수의 수명은 짧음. 함수가 호출 될 떄 만들어지며 함수가 끝나면 삭제됨</p>
 
     <h2>카운터 딜레마</h2>
-    <p></p>
+    <p>
+        //Function to increment counter
+        function add() {
+            counter = 0;
+            counter += 1;
+            return counter;
+        }
+        //Trying to increment the counter
+        function myFunction() {
+            document.getElementById("demo").innerHTML = add();
+        }
+
+        // The counter should now be 3. but it is 1
+    </p>
+
+    <p>우리가 함수를 호출 할 때마다 로컬 카운터를 설정하기 때문에 작동하지 않음</p>
+
+    <h2>자바스크립트 중첩 함수</h2>
+    <p>모든 기능은 전역 범위에 액세스 할 수 있음</p>
+    <p>실제로 자바스크립트에서는 모든 함수가 위의 범위에 액세스 할 수 있음</p>
+    <p>
+        document.getElementById("demo").innerHTML = add();
+        function add(){
+            var counter = 0;
+            function plus() {counter += 1;}
+            plus();
+            return counter;
+        }
+
+        // 1
+    </p>
+    <p>plus()외부에서 기능에 도달 살 수 있다면 카운터 딜레마를 해결할 수 있음</p>
+    <p>또한 counter = 0 한번만 실행하는 방법을 찾아야 함.</p>
+    <p>우리는 폐쇄가 필요함</p>
+
+    <h2>자바스크립트 클로저</h2>
+    <p>
+        var add = (function () {
+            var counter = 0;
+            return function () {counter += 1; return counter;}
+        })();
+
+        function myFunction() {
+            document.getElementById("demo").innerHTML = add();
+        }
+    </p>
+    <p>변수 add에는 자체 호출 함수의 리턴값이 지정됨</p>
+    <p>자체 호출 함수는 한번만 실행됨</p>
+    <p>카운터를 0으로 설정하고 함수 표현식을 반환함</p>
+    <span>클로저는 부모 함수가 닫힌 후에도 부모 범위에 액세스 하는 함수</span>
 </body>
 </html>
