@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>HTML DOM 요소</h1>
+  <p>이 페이지는 HTML 페이지에서 HTML요소를 찾아 액세스하는 방법을 알려줌</p>
+
+  <h2>HTML 요소 찾기</h2>
+  <p>JavaScript를 사용하여 HTML요소를 조작하려고 함</p>
+  <p>이렇게 하려면 요소를 먼저 찾아야함. 이를 수행하는 방법에는 여러 가지가 있음</p>
+  <ul>
+    <li>ID로 HTML 요소찾기</li>
+    <li>태그 이름으로 HTML 요소 찾기</li>
+    <li>클래스 이름으로 HTML 요소 찾기</li>
+    <li>CSS 선택자로 HTML 요소 찾기</li>
+    <li>HTML 개체 컬렉션을 사용하여 HTML요소 찾기</li>
+  </ul>
+
+  <h2>ID로 HTML요소 찾기</h2>
+  <p>DOM에서 HTML요소를 찾는 가장 쉬운 방법은 요소 id를 사용하는 것</p>
+  <p>
+    var myElement = document.getElementById("intro");
+    document.getElementById("demo").innerHTML =
+    "The text from the intro paragraph is" +
+    myElement.innerHTML;
+  </p>
+
+  <h2>태그 이름으로 HTML요소 찾기</h2>
+  <p>모든 p요소를 찾음</p>
+  <p>
+    var x = document.getElementByTagName("p");
+    document.getElementById("demo").innerHTML =
+    'The text in first paragraph (index 0) is:' +
+    x[0].innerHTML;
+  </p>
+
+  <h2>클래스 이름으로 HTML 요소 찾기</h2>
+  <p>동일한 클래스 이름을 가진 모든 HTML 요소를 찾으려면 사용함</p>
+  <p>
+    var x = document.getElementByClassName("intro");
+    document.getElementById("demo").innerHTML =
+    'The first paragraph (index 0) with class ="intro":' +
+    x[0].innerHTML;
+  </p>
+  <span>Internet Explorer8 및 이전 버전에서는 클래스 이름별로 요소를 찾지 못함</span>
+
+  <h2>css 선택자로 HTML 요소 찾기</h2>
+  <p>지정된 css선택기(ID, 클래스 이름, 유형, 속성, 속성 값 등)와 일치하는 모든 HTML 요소를 찾으려면 querySelectorAll()메소드를 사용해라</p>
+  <p>
+    var x = document.querySelectorAll("p.intro");
+    document.getElementById("demo").innerHTML =
+    'The first parargraph (index 0) with class = "intro":'+
+    x[0].innerHTML;
+
+    //intro 클래스가 있는 p태그를 찾음
+  </p>
+  <span>querySelectorAll()메서드는 Internet Explorer 8 및 이전 버전에서는 작동하지 않음</span>
+
+  <h2>html 개체 컬렉션을 사용하여 HTML요소 찾기</h2>
+  <p>
+    <form id="frm1" action="/action_page.php">
+     First name: <input type="text" name="fname" value="Donald"><br>
+     Last name: <inpur type="text" name="lname" value="Duck"><br><br>
+    <input type="submit" value="Submit">
+    </form>
+
+    <p>Click "Try it" to display the value of each element in the form.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+      function myFunction() {
+        var x = document.forms["frm1"];
+        var text = "";
+        var i;
+        for (i = 0; i < x.length; i++){
+          text += x.elements[i].value + "<br>";
+        }
+        document.getElementById("demo").innerHTML = text;
+      }
+    </script>
+  </p>
+</body>
+</html>
