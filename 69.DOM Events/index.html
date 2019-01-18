@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>HTML DOM Events</h1>
+  
+  <h2>이벤트에 반응하기</h2>
+  <p>자바스크립트는 사용자가 HTML요소를 클릭 할 때처럼 이벤트가 발생할 때 실행될 수 있음</p>
+  <p>사용자가 요소를 클릭 할 때 코드를 실행하려면 자바스크립트 코드를 HTML 이벤트 속성에 추가 함.</p>
+
+  <p>HTML 이벤트의 예</p>
+  <ul>
+    <li>사용자가 마우스를 클릭하면</li>
+    <li>웹페이지가 로드 되었을 때</li>
+    <li>이미지가 로드되면</li>
+    <li>마우스가 요소 위로 움직일 때</li>
+    <li>입력 필드가 변경되면</li>
+    <li>HTML 약식이 제출되면</li>
+    <li>사용자가 키를 칠 때</li>
+  </ul>
+
+  <p>h1 요소의 내용을 사용자가 클릭 할 때 변경됨</p>
+  <p><h1 onclick="this.innerHTML = 'Ooops!'">Click on this text!</h1></p>
+
+  <p>이 예제에서 함수는 이벤트 핸들러에서 호출됨</p>
+  <p>
+    <h1 onclick="changeText(this)">click on this text!</h1>
+
+    <script>
+      function changeText(id) {
+        function changeText(id) {
+          id.innerHTML = "Ooops!";
+        }
+      }
+    </script>
+  </p>
+
+  <h2>HTML DOM을 사용하여 이벤트 할당</h2>
+  <p>
+    document.getElementById("myBtn").onclick = displayDate;
+
+    function displayDate() {
+      document.getElementById("demo").innerHTML = Date();
+    }
+  </p>
+
+  <h2>onload 및 onunload 이벤트</h2>
+  <p>onload 및 onunload 이벤트는 사용자가 페이지에 들어가거나 페이지를 떠날 때 트리거 됨</p>
+  <p>onload 이벤트는 방문자의 브라우저 유형과 브라우저 버전을 확인하고 정보를 기반으로 적절한 버전의 웹 페이지를 로드하는데 사용할 수 있음</p>
+  <p>onload 및  onunload 이벤트는 쿠키를 처리하는 데 사용할 수 있음</p>
+
+  <p>
+    function checkCookies() {
+      var text = "";
+      if (navigator.cookieEnabled == true) {
+        text = "Cookies are enabled.";
+      } elese { 
+        text = "Cookies are not enabled.";
+      }
+      document.getElementById("demo").innerHTML = text;
+    }
+  </p>
+
+  <h2>onchange 이벤트</h2>
+  <p>onchange 이벤트는 종종 입력 필드의 유효성 검사와 함께 사용됨</p>
+  <p>upperCase() 함수는 사용자가 입력 필드의 내용을 변경할 때 호출 됨</p>
+</body>
+</html>
