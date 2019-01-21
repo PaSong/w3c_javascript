@@ -14,5 +14,78 @@
  <p>document.getElementById("myBtn").addEvetListener("click", displayDate);</p>
 
  <p>addEnentListener()있어서, 지정된 요소에 대한 이벤트 핸들러를 첨부.</p>
+ <p>addEventListener()메서드는 기존 이벤트 처리기를 덮어 쓰지 않고 요소에 이벤트 처리기를 연결함</p>
+ <p>하나의 요소에 많은 이벤트 핸들러를 추가 할 수 있음</p>
+ <p>하나의 요소, 즉 두번의 "클릭"이벤트에 동일한 유형의 많은 이벤트 핸들러를 추가 할 수 있음</p>
+ <p>HTML 요소뿐만 아니라 모든 DOM 객체에 이벤트 리스너를 추가 할 수 있음.</p>
+ <p>즉 윈도우 객체.이 addEventListener()메서드를 사용하면 이벤트가 버블 링에 반응하는 방식을 보다 쉽게 제어할 수 있음</p>
+ <p>addEventListener()메서드를 사용할 때 자바 스크립트는 HTML 마크업과 분리되어 가독성을 높이고 HTML 마크업을 제어하지 않아도 이벤트 리스너를 추가 할 수 있음</p>
+ <p>removeEventListener()메서드를 사용하여 이벤트 리스너를 쉽게 제거 할 수 있음</p>
+
+ <h2>통사론</h2>
+ <p>element.addEventListener(event, function, useCapture);</p>
+ <p>첫 번째 매개 변수는 이벤트 유형임(click, mousedown등등)</p>
+ <p>두 번째 매개 변수는 이벤트가 발생할 때 호출 할 함수</p>
+ <p>세 번쨰 매개 변수는 이벤트 버블 링 또는 이벤트 캡쳐를 사용할지 여부를 지정하는 부울 값임(이 매개 변수는 선택적)</p>
+ <span>이벤트에 "on"접두사를 사용하지 않음. click대신 onclick을 사용하십시오</span>
+
+ <h2>요소에 이벤트 처리기 추가</h2>
+ <p>document.getElementById("myBtn").addEventListener("click", function(){
+    alert("Hello World");
+   });
+ </p>
+
+ <h2>같은 요소에 많은 이벤트 처리기 추가</h2>
+ <p>addEventListener()방법을 사용하면 기존 이벤트를 덮어 쓰지 않고 동일한 요소에 많은 이벤트를 추가 할 수 있음</p>
+ <p>
+   var x = document.getElementById("myBtn");
+   x.addEventListener("mouseover", myFunction);
+   x.addEventListener("click",mySecondFunction);
+   x.addEventListener("mouseout", myThirdFunction);
+
+   function myFunction() {
+     document.getElementById("demo").innerHTML += "Moused over!<br>";
+   }
+   function mySecondFunction(){
+     document.getElementById("demo").innerHTML += "Clicked!";
+   }
+   function myThirdFunction(){
+     document.getElementById("demo").innerHTML += "Moused out!"
+   }
+ </p>
+
+ <h2>창 개체에 이벤트 처리가 추가</h2>
+ <p>addEventListener()메서드를 사용하면 HTML요소, HTML문서, 윈도우 객체 또는 객체를 비롯한 이벤트를 지원하는 다른 객체와 같은 HTML DOM 객체에 이벤트 리스너를 추가 할 수 있음</p>
+ <p>window.addEventListener("resize", function(){
+    document.getElementById("demo").innerHTML = Math.random();
+   });</p>
+
+  <h2>전달 매개 변수</h2>
+  <p>매개 변수 값을 전달할 때 매개 변수를 사용하여 지정된 함수를 호출하는 "익명 함수"를 사용해라 </p> 
+  <p>
+    var p1 = 5;
+    var p2 = 7;
+
+    document.getElementById("myBtn").addEventLisener("click", function() {
+      myFunction(p1, p2);
+    });
+
+    function myFunction(a, b){
+      var result = a * b;
+      document.getElementById("demo").innerHTML = result;
+    }
+  </p>
+
+  <h2>이벤트 버블 링 또는 이벤트 캡처?</h2>
+  <p>HTML DOM에서 버블 링 및 캡퍼하는 이벤트 전파에는 두 가지 방법이 있음</p>
+  <p>이벤트 전파는 이벤트가 발생할 때 요소 순서를 정의하는 방법임</p>
+  <p><p>요소가 <div>요소 안에 있고 사용자가 <p>요소를 클릭하면 어떤 요소의 "클릭"이벤트가 먼저 처리되어아 합니까?</p>
+  <p>버블링의 <p>요소의 클릭 이벤트가 먼저 처리 한 후 <div>요소의 클릭 이벤트 : 내부 대부분의 요소의 이벤트를 먼저 한 후 외부를 처리됨</p>
+  <p>addEventListener()메서드를 사용하면 "useCaptuer"매개 변수를 사용하여 전파 유형을 지정할 수 있음</p>
+  <p>addEventListener(event, function, useCapture);</p>
+  <p>기본값은 false임. 이 값은 버블 전파를 사용하여, 값이 true로 설정되면 이벤트는 캡처 전파를 사용함</p>
+
+  <h2>removeEventListener()메서드</h2>
+  <p>addEventListener()메서드를 첨부 된 이벤트 핸들러를 제거함</p>
 </body>
 </html>
