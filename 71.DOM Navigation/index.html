@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>HTML DOM 탐색</h1>
+  <p>HTML DOM을 사용하면 노드 관계를 사용하여 노드 트리를 탐색 할 수 있음</p>
+
+  <h2>DOM 노드</h2>
+  <p>HTML 문서의 모든 것이 노드임</p>
+
+  <ul>
+    <li>전체 문서가 문서 노드임</li>
+    <li>모든 HTML 요소는 요소 노드임</li>
+    <li>HTML 요소 내부의 텍스트는 텍스트 노드임</li>
+    <li>모든 HTML 속성은 속성 노드임(사용되지 않음)</li>
+    <li>모든 주석은 주석 노드임</li>
+  </ul>
+
+  <p>HTML DOM을 사용하면 노드 트리의 모든 노드에 JavaScript로 액세스 할 수 있음</p>
+  <p>새 노드를 만들 수 있으며 모든 노드를 수정하거나 삭제할 수 있음</p>
+
+  <h2>노드 관계</h2>
+  <p>노드 트리의 노드는 서로 계층 관계를 갖음</p>
+  <p>상위, 하위 및 형제라는 용어는 관계를 설명하는데 사용됨</p>
+  <ul>
+    <li>노드 트리에서 최상위 노드는 루트(또는 루트 노드)</li>
+    <li>모든 노드에는 정확히 하나의 부모가 있지만 루트(부모가 없음)</li>
+    <li>노드는 많은 수의 자식을 가질 수 있음</li>
+    <li>형제(형제 또는 자매)는 같은 부모를 가진 노드임</li>
+  </ul>
+
+  <h2>노드 간 이동</h2>
+  <p>노드 속성을 사용하여 JavaScript가 있는 노드 사이를 탐색 할 수 있음</p>
+
+  <ul>
+    <li>parentNode</li>
+    <li>childNodes[nodenumber]</li>
+    <li>firstChild</li>
+    <li>lastchild</li>
+    <li>nextSibling</li>
+    <li>previousSibling</li>
+  </ul>
+
+  <h2>하위 노드 및 노드 값</h2>
+  <span>DOM처리의 일반적인 오류는 요소 노드가 텍스트를 포함 할 것으로 기대하는 것임</span>
+
+  <p>innerHTML 속성에 액세스하는 nodeValue것은 첫 번째 자식에 액세스하는 것과 동일함</p>
+  <p>var myTitle = document.getElementById("demo").firstChild.nodeValue;</p>
+  <p>var myTitle = document.getElementById("demo").childNodes[0].nodeValue;</p>
+
+  <h2>DOM 루트 노드</h2>
+  <p>전체 문서에 대한 액세스를 허용하는 두 가지 특수 속성이 있음</p>
+  <ul>
+    <li>document.body - 문서 본문</li>
+    <li>document.documentElement -전체 문서</li>
+  </ul>
+
+  <h2>nodeName 속성</h2>
+  <p>nodeName등록 정보는 노드의 이름을 지정함</p>
+
+  <ul>
+    <li>nodename은 읽기 전용임</li>
+    <li>요소 노드의 nodeName은 태그 이름과 같음</li>
+    <li>속성 노드의 nodeName은 속성 이름임</li>
+    <li>텍스트 노드의 nodeName은 항상 #text임</li>
+    <li>문서 노드의 nodeName은 항상 #document임</li>
+  </ul>
+
+  <span>nodeName 항상 HTML 요소의 대문자 태그 이름이 포함됨</span>
+
+  <h2>nodeValue 속성</h2>
+  <p>nodeValue속성은 노드의 값을 지정함</p>
+  <ul>
+    <li>요소 노드에 대한 nodeValue는 null</li>
+    <li>텍스트 노드의 nodeValue는 텍스트 자체임</li>
+    <li>속성 노드의 nodeValue는 속성 값임</li>
+  </ul>
+
+  <h2>nodeType속성</h2>
+  <p>nodeType속성은 읽기 전용임.노드의 유형을 리턴함</p>
+</body>
+</html>
