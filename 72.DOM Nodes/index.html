@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>DOM 요소(노드)</h1>
+  <p>노드 추가 및 제거(HTML 요소)</p>
+
+  <h2>새 HTML 요소(노드) 만들기</h2>
+  <p>HTML DOM에 새 요소를 추가하려면 먼저 요소(요소 노드)를 만든 다음 기존 요소에 추가해야함.</p>
+
+  <p>
+    var para = document.createElement("p");
+    var node = document.createTextNode("This is new.");
+    para.appendChild(node);
+    var element = document.getElementById("div1");
+    element.appendChild(para);
+  </p>
+
+  <h2>새 HTML요소 만들기 - insertBefore()</h2>
+  <p>appendChild() 이전 예제의 메서드는 새 요소를 부모의 마지막 자식으로 추가했음</p>
+  <p>insertBefore()방법을 사용할 수 도 있음</p>
+  <p>
+    var para = document.createElement("p");
+    var node = document.createTextNode("This is new");
+    para.appendChild(node);
+
+    var element = document.getElementById("div1");
+    var child = document.getElementById("p1");
+    element.insertBefore(para,child);
+  </p>
+
+  <h2>기존 HTML 요소 제거</h2>
+  <p>HTML 요소를 제거하려면 요소의 부모를 알아야함</p>
+  <p>
+    var parent = document.getElementById("div1");
+    var child = document.getELementById("p1");
+    parent.removeChild(child);
+  </p>
+  <span>node.remove()방법은 Internet Explorer 브라우저의 모든 버전에서 작동하지 않음</span>
+
+  <h2>HTML 요소 바꾸기</h2>
+  <p>요소를 HTML DOM으로 바꾸러며 다음 replaceChild()방법을 사용함.</p>
+  <p>
+    var parent = document.getElementById("div1");
+    var child = document.getElementById("p1");
+    var para = document.createElement("p");
+    var node = document.createTextNode("This is new.");
+    para.appendChild("node");
+    parent.replaceChild(para,child);
+  </p>
+</body>
+</html>
