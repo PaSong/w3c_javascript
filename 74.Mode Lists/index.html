@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>HTML DOM NodeList 객체</h1>
+  <p>NodeList대상 문서로부터 추출 된 노드의 목록(회수)이다.</p>
+  <p>NodeList목적은 거의 동일하다 HTMLCollection객체임</p>
+  <p>일부(구형) 브라우저는 해당 속성에 대한 NodeList 객체를 반환함. ChileNode</p>
+  <p>대부분의 브라우저는 메소드의 NodeList 객체를 반환함. querySelectorAll().</p>
+  <p>
+    var myNodelist = document.querySelctorAll("p");
+    document.getElementById("demo").innerHTMNL = 
+    "The innerHTML of the second paragraph is :" +
+    myNodelist[1].innerHTML;
+  </p>
+
+  <h2>HTML DOM 노드 목록 길이</h2>
+  <p>length속성은 노드 목록의 노드 수를 정의함</p>
+
+  <h2>HTMLCollection과 NodeList의 차이점</h2>
+  <p>HTMLCollection은 HTML요소 모음임</p>
+  <p>NodeList는 문서 노드의 모음</p>
+  <p>NodeList와 HTMLCollection은 같음</p>
+  <p>NodeList객체와 HTMLCollection객체는 객체의 배열과 같은 목록 (컬렉션)임</p>
+  <p>둘 다 목록의 항목 수를 정의하는 길이 속성을 가짐</p>
+  <p>둘 다 배열과 같은 각 항목에 액세스하기위한 색인 (0,1,2,3,4,...)을 제공</p>
+  <p>HTMLCOllection 항목은 이름, ID 또는 인덱스 번호로 액세스 할 수 있음</p>
+  <p>NodeList항목은 색인 번호로만 액세스 할 수 있음</p>
+  <p>NodeList객체만 속성 노드와 텍스트 노드를 포함 할 수 있음</p>
+
+  <span>노드목록은 배열이 아님</span>
+
+</body>
+</html>
