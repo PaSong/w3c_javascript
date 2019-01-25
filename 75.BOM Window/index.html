@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>The Browser Object Model</h1>
+  <p>BOM(Browser Object Model)을 사용하면 JavaScript가 브라우저와 "대화"할 수 있음</p>
+
+  <h2>브라우저 개체 모델(BOM)</h2>
+  <p>공식적인 기준이 없음</p>
+  <p>최신 브라우저는 JavaScript 상호 작용에 대해 (거의) 동일한 메소드 및 속성을 구현했기 때문에 BOM의 메소드 및 속성으로 종종 언급됨</p>
+
+  <h2>윈도우 객체</h2>
+  <p>window 객체는 모든 브라우저에서 지원됨. 브라우저 창이 나타남</p>
+  <p>모든 전역 JavaScript 객체, 함수 및 변수는 자동으로 윈도우 객체의 멤버가 됨</p>
+  <p>전역 변수는 윈도우 객체의 속성임</p>
+  <p>전역 함수는 창 개체의 메서드임</p>
+  <p>심지어 (HTML DOM의)문서 객체는 윈도우 객체의 속성임</p>
+  <p>window.document.getElementById("header");</p>
+  <p>document.getElementById("header");</p>
+  <p>위에 두개는 같은 거임.</p>
+
+  <h2>창 크기</h2>
+  <p>두 개의 등록 정보를 사용하여 브라우저 창의 크기를 결정할 수 있음</p>
+  <p>두 속성 모두 크기를 픽셀 단위로 반환</p>
+  <p>window.innerHeight - 브라우저 창의 내부 높이 (픽셀 단위)</p>
+  <p>window.innerWidth - 브라우저 윈도우의 내부 너비 (픽셀 단위)</p>
+  <span>브라우저 창(브라우저 뷰포트)에는 도구 모음 및 스크롤 막대가 포함되지 않음</span>
+
+  <p>Internet Explorer 8,7,6,5:</p>
+  <p>document.documentElement.clientHeight</p>
+  <p>document.documentElement.clientWidth</p>
+  <p>document.body.clientHeight</p>
+  <p>document.body.clientWidth</p>
+
+  <h2>다른 윈도우 메소드</h2>
+  <p>window.open() -  새창을 염</p>
+  <p>window.close() - 현재 창 닫기</p>
+  <p>window.movwTo() -  현재 창 이동</p>
+  <p>window.resizeTo() - 현재 창 크기 조정</p>
+</body>
+</html>
