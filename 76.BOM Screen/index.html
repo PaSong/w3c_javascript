@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>자바 스크립트 창 화면</h1>
+  <p>window.screen 객체는 사용자 화면에 대한 정보를 포함함</p>
+
+  <h2>윈도우 화면</h2>
+  <p>window.screen 객체는 윈도우 접두사없이 작성 할 수 있음</p>
+
+  <ul>
+    <li>screen.width</li>
+    <li>secreen.height</li>
+    <li>screen.availHeight</li>
+    <li>screen.avaiWidth</li>
+    <li>screen.colorDepth</li>
+    <li>screen.pixelDepth</li>
+  </ul>
+
+  <h2>창 화면 너비</h2>
+  <p>screen.width속성은 방문자의 화면 너비를 픽셀 단위로 반환함</p>
+  <p>
+    document.getElement.ById("demo").innerHTML =
+    "Screen width is" + screen.width;
+  </p>
+
+  <h2>창 화면 높이</h2>
+  <p>screen.height속성은 방문자의 화면 높이를 픽셀 단위로 반환함</p>
+  <p>
+    document.getElementById("demo").innerHTML =
+    "Screen Height " + screen.height;
+  </p>
+
+  <h2>창 화면 사용 가능한 너비</h2>
+  <p>screen.availWidth속성은 Windows 작업 표시 줄과 같은 인터페이스 기능을 제외한 방문자 화면의 너비를 픽셀 단위로 반환함</p>
+  <p>
+    document.getElementById("demo").innerHTML =
+    "Available Screen Width" + screen.availWidth;
+  </p>
+
+  <h2>창 화면 사용 가능한 높이</h2>
+  <p>screen.availHeight속성은 방문자의 화면 높이(픽셀 단위)에서 Windows 작업 표시 줄과 같은 인터페이스 기능을 뺀 값을 반환함</p>
+
+  <h2>창 화면 색 농도</h2>
+  <p>screen.colorDepth속성은 하나의 색상을 표시하는데 사용되는 비트 수를 반환함.</p>
+  <p>현대의 모든 컴퓨터는 컬러 해상도를 위해 24비트 또는 32비트 하드웨어를 사용함</p>
+  <p>24비트 = 16,777,216 다른 "트루 컬러"</p>
+  <p>32비트 = 4,294,967,296 다른 "딥 컬러"</p>
+  <span>HTML에 사용된 #rrggbb(rgb) 값은 "True Colors"(16,777,216가지 색상)</span>
+
+  <h2>창 화면 픽셀 깊이</h2>
+  <p>screen.pixelDepth 속성은 화면의 픽셀 깊이를 반환함</p>
+  <span>최신 컴퓨터의 경우 색상 수와 픽셀 수 는 동일함</span>
+</body>
+</html>
