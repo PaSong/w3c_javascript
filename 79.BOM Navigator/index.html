@@ -8,5 +8,50 @@
 </head>
 <body>
   <h1>Navigator</h1>
+  <p>window.navigator 객체는 방문자의 브라우저에 대한 정보가 포함되어 있음</p>
+
+  <h2>창 네비게이터</h2>
+  <p>window.navigator 객체는 윈도우 접두자없이 작성 할 수 있음.</p>
+  <ul>
+    <li>navigator.appName</li>
+    <li>navigator.appCodeName</li>
+    <li>navigator.platform</li>
+  </ul>
+
+  <h2>브라우저 쿠키</h2>
+  <p>cookieEnabled쿠키가 활성화되면 이 속성은 true를 반환하고 그렇지 않으면 false를 반환함</p>
+  <p>
+    document.getElementById("demo").innerHTML =
+    "navigator.cookieEnabled is" + navigator.cokieEnabled;
+  </p>
+
+  <h2>브라우저 응용 프로그램 이름</h2>
+  <p>appName속성은 브라우저의 응용 프로그램 이름을 반환함</p>
+  <p>
+    document.getElementById("demo").innerHTML = 
+    "navigatro.appName is " + navigator.appName;
+  </p>
+  <span>"네스케이프"는 IE11, 크롬, 파이어 폭스, 사파리의 애플리케이션 이름</span>
+
+  <h2>브라우저 응용 프로그램 코드 이름</h2>
+  <span>appCodeName 속성은 브라우저의 응용 프로그램 코드 이름을 반환</span>
+
+  <h2>브라우저 엔진</h2>
+  <p>product속성은 브라우저 엔젠의 제품 이름을 반환함</p>
+
+  <h2>브라우저 버전</h2>
+  <p>appVersion 속서은 브라우저에 대한 버전 정보를 반환함</p>
+
+  <h2>브라우저 에이전트</h2>
+  <p>userAgent속성은 브라우저에서 브라우저로 보낸 사용자 에이전트 헤더를 서버로 반환함</p>
+
+  <h2>경고</h2>
+  <p>탐색기 객체의 정보는 종종 오도 될 수 있으므로 다음과 같은 이유로 브라우저 버전을 감지하는데 사용하면 안됨</p>
+  <ul>
+    <li>여러 브라우저에서 동일한 이름을 사용할 수 있음</li>
+    <li>탐색기 데이터는 브라우저 소유자가 변경할 수 있음</li>
+    <li>일부 브라우저는 사이트 테스트를 우회하는 것으로 잘못 판단함</li>
+    <li>브라우저는 브라우저보다 나중에 릴리스 된 새 운영 체제를 보고 할 수 없음</li>
+  </ul>
 </body>
 </html>
