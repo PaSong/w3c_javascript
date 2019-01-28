@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Popup Boxes</h1>
+  <p>자바 스크립트에는 경고 상자, 확인 상자 및 프롬프트 상자라는 세 종류의  팝업 상자가 있음</p>
+
+  <h2>알림 상자</h2>
+  <p>사용자에게 정보가 전달되도록하려면 경고 상자가 자주 사용됨</p>
+  <p>경고 상자가 나타나면 사용자가 계속 진행하기 위해 '확인'을 클릭해야함</p>
+
+  <p>window.alert("sometext");</p>
+  <p>window.alert()메서드는 윈도우 프리픽스 없이 쓸 수 있음</p>
+
+  <h2>상자 확인</h2>
+  <p>window.confirm("sometext");</p>
+  <p>윈도우 프리픽스 없이 쓸 수 있음</p>
+
+  <p>
+    function myFunction(){
+      var txt;
+      if (confirm("Press a button!")) {
+        text = "You pressed OK!";
+      }else {
+        txt ="You pressed Cancel!";
+      }
+      document.getElementById("demo").innerHTML = txt;
+    }
+  </p>
+
+  <h2>프롬프트 상자</h2>
+  <p>사용자가 페이지에 들어가기 전에 값을 입력하게 하려면 프로프트 상자가 자주 사용됨</p>
+
+  <h2>줄 바꿈</h2>
+  <p>팝업 상자 안에 줄 바꿈을 표시하려면 백 슬래시 뒤에 문자 n을 사용해라</p>
+  <p>\n</p>
+</body>
+</html>
