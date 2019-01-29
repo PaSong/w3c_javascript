@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Timing Events</h1>
+  <p>자바스크립트는 시간 간격으로 실핼할 수 있음</p>
+  <p>이를 타이밍 이벤트라고 함</p>
+
+  <h2>타이밍 이벤트</h2>
+  <p>window개체가 지정된 시간 간격 코드의 실행을 할 수 있음</p>
+  <p>이 시간 간격을 타이밍 이벤트라고 함</p>
+  <p>자바스크립트와 함께 사용하는 두 가지 주요 방법은 다음과 같음</p>
+  <p>setTimeout(function,milliseconds) 지정된 밀리 초를 기다린 후 함수를 실행</p>
+  <p>setUnterval(function,milliseconds) setTimeout()과 동일하지만 함수의 실행을 계속 반복함</p>
+  <span>setTimeout() 및 setInterval() HTML DOM 창 개체의 두가지 방법임</span>
+
+  <h2>setTimeout() 메서드</h2>
+  <p>window.setTimeout()메서드는 윈도우 프리픽스없이 쓸 수 있음</p>
+  <p>첫 번째 매개 변수는 실행할 함수임</p>
+  <p>두 번째 매개 변수는 실행 전 밀리 초 수를 나타냄</p>
+  <p>
+    <button onclick='setTimeout(myFunction, 3000);'>Try it</button>
+
+    function myFunction() {
+      alert('Hello');
+    }
+  </p>
+  
+  <h2>실행을 중지하는 방법?</h2>
+  <p>clearTimeout()메서드는 setTimeout()에 지정된 함수의 실행을 중지함</p>
+  <p>window.clearTimeout(timeoutVariable)</p>
+  <p>윈도우 프리픽스없이 쓸 수 있음</p>
+  <p>clearTimeout()방법은 리턴 변수를 사용함 setTimeout()</p>
+  <p>
+    myVar = setTimeout(function, milliseconds);
+    clearTimeout(myVar);
+  </p>
+  <p>함수가 아직 싱행되지 않은 경우 clearTimeout()메서드를 호출하여 실행을 중지 할 수 있음</p>
+
+  <h2>setInterval()메서드</h2>
+  <p>setUnterval()방법은 주어진 시간 간격마다 주어진 함수를 반복함</p>
+  <p>window.setInterval(function, milliseconds);</p>
+  <p>윈도우 프리픽스 없이 쓸 수 있음</p>
+  <p>첫 번쨰 매개 변수는 실행할 함수 임</p>
+  <p>두 번째 매개 변수는 각 실행 사이의 시간 간격의 길이를 나타냄</p>
+  <p>
+    var myVar = setInterval(myTimer, 1000);
+
+    function myTimer() {
+      var d = new Date();
+      document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+    }
+  </p>
+  <span> 1초에 1000밀리 초가 있음</span>
+
+  <h2>실행을 중지하는 방법?</h2>
+  <p>clearInterval() 메서드는 setInterval() 메서드에 지정된 함수의 실행을 중지함</p>
+  
+ </body>
+</html>
