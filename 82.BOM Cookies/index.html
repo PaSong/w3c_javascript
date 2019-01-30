@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>자바스크립트 쿠키</h1>
+    <p>쿠키를 사용하면 사용자 정보를 웹 페이지에 저장할 수 있슴.</p>
+
+    <h2>쿠키란 무엇?</h2>
+    <p>쿠키는 컴퓨터의 작은 텍스트 파일에 저장된 데이터임</p>
+    <p>웹 서버가 브라우저에 웹 페이지를 보내면 연결이 종료되고 서버는 사용자에 관한 모든 것을 잊어 버림</p>
+    <p>쿠키는 "사용자에 관한 정보를 기억하는 방법"이라는 문제를 해결하기 위해 고안되었음</p>
+    <ul>
+        <li>사용자가 웹 페이지를 방문하면 그의 이름을 쿠키에 저장할 수 있음</li>
+        <li>다음에 사용자가 페이지를 방문하면 쿠키는 그의 이름을 "기억"함</li>
+    </ul>
+    <p>username = John Doe</p>
+    <p>브라우저가 서버의 웹 페이지를 요청하면 해당 페이지에 속한 쿠키가 요청에 추가됨</p>
+    <p>이렇게하면 서버가 사용자에 대한 정보를 "기억"하는데 필요한 데이터를 얻음</p>
+    <span>브라우저에 로컬 쿠키 지원이 꺼져있는 경우 아래 예는 작동하지 않음</span>
+
+    <h2>자바스크립트 쿠키 만들기</h2>
+    <p>JavaScript는 document.cookie 속성을 사용하여 쿠키를 만들고, 읽고 삭제할 수 있음</p>
+    <p>document.cookie = "username = John Doe";</p>
+    <p>만료일을 추가 할 수 도 있음 (UTC 시간). 기본적으로 브라우저가 닫힐 때 쿠키가 삭제됨</p>
+    <p>document.cookie = "username = John Doe"; expires=Thu, 18 Dec 2013 12:00:00 UTC;</p>
+    <p>경로 매개 변수를 사용하면 쿠키가 속한 경로를 브라우저에 알릴 수 있음. 기본적으로 쿠키는 현재 페이지에 속함</p>
+    <p>document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";</p>
+
+    <h2>JavaScript로 쿠키 읽기</h2>
+    <p>var x = document.cookie;</p>
+    <span>document.cookie 다음과 같이 하나의 문자열로 모든 쿠키를 반환함 : cookie1 = value; 쿠키 2 = 값; 쿠키 3 = 값;</span>
+
+    <h2>자바스크립트로 쿠키 변경</h2>
+    <p>document.cookie = "username=John Smith; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";</p>
+
+    <h2>JavaScript로 쿠키 삭제</h2>
+    <p>쿠키를 삭제할 때 쿠키 값을 지정할 필요가 없음</p>
+    <p>expires 매개 변수를 전달 된 날짜로 설정하면됨</p>
+    <span>올바른 쿠키를 삭제하려면 쿠키 경로를 정의해야함</span>
+    <span>일부 브라우저에서는 경로를 지정하지 않으면 쿠키를 삭제할 수 없음</span>
+
+    <h2>쿠키 문자열</h2>
+    <p>document.cookie 속성은 일반 텍스트 문자열처럼 보임. 그러나 그렇지 않음</p>
+    <p>document.cookie에 전체 쿠키 문자열을 쓰더라도 다시 읽으면 그 이름 - 값 쌍만 볼 수 있음</p>
+
+    <h2>쿠키 설정 기능</h2>
+    <p>먼저 function 쿠키 변수에 방문자의 이름을 저장함</p>
+    <p>
+        function setCookie(cname, cvalue, exdays){
+            var d = new Date();
+            d.detTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+    </p>
+    <p>위의 함수의 매개변수는 쿠키의 이름(cname), 쿠키의값(cvalue) 및 쿠키가 만료 될 때까지의 일 수 (exdays)임.</p>
+    <p>이 함수는 cookiename, 쿠키 값 및 만료 문자열을 함께 추가하여 쿠키를 설정함</p>
+
+    <h2>쿠키를 얻는 함수</h2>
+    <p>function 지정된 쿠키의 값을 반환하는 a를 만듬</p>
+    <p>
+        function getCookie(cname) {
+            var name = cname + "=";
+            var documentCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for(var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if(c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+    </p>
+
+    <h2>쿠키확인기능</h2>
+</body>
+</html>
